@@ -25,25 +25,35 @@
 構成：
 ・メインナビ
 HOME ABOUT WORKS CONTACT
-            ｜→ WEB: 架空のコーポレートサイト、バナー、ロゴ　の紹介
-            ｜→ FLIER: 広告物（チラシ・ポップ）の紹介
-            ｜→ OTHER: プログラミングや他カテゴリーの作品を紹介
+            ｜→ WEB: 架空のコーポレートサイト、バナー、ロゴ　の紹介(term: site,bannar,logo)
+            ｜→ FLIER: 広告物（チラシ・ポップ）の紹介(term: event,pop,service)
+            ｜→ OTHER: プログラミングや他カテゴリーの作品を紹介(term: PG,AI)
 ------------------------------
 
 ・各ページ
 HOME(WP:home.php)
 ------------------------------
-ABOUT(WP:page.php 固定ページ)
-------------------------------
-WORKS(WP:about.php 固定ページ)
-    ｜→ WEB(WP:about.php 固定ページ)
-        ｜→ WEB(WP:about.php 固定ページ)
+WORKS(WP:works.php カスタムテンプレート-各termのindexページとして使用)
+    ｜→ WEB(WP:taxonomy.php カスタム分類ページ)
+        ｜→ WEB(WP:single.php 個別ページ)
 
-    ｜→ FLIER(WP:about.php 固定ページ)
-        ｜→ WEB(WP:about.php 固定ページ)
+    ｜→ FLIER(WP:taxonomy.php カスタム分類ページ)
+        ｜→ FLIER(WP:single.php 個別ページ)
         
-    ｜→ OTHER(WP:about.php 固定ページ)
-        ｜→ WEB(WP:about.php 固定ページ)
+    ｜→ OTHER(WP:taxonomy.php カスタム分類ページ)
+        ｜→ OTHER(WP:single.php 個別ページ)
 
+インクルードタグ: sidebar.php (term毎のナビゲーション設置)
+※個別ページにカスタムフィールド・アイキャッチ画像設定
 ------------------------------
-CONTACT(WP:page.php 固定ページ)　※contact7　か　Googlefoam　を使用
+ABOUT(WP:page.php 固定ページ )
+------------------------------
+CONTACT(WP:page.php 固定ページ )　※contact7　か　Googlefoam　を使用
+
+共通のインクルードタグ: 
+header.php : グローバルナビ、サイトロゴ
+footer.php : コピーライト、トップページリンク
+
+その他：
+404.php
+functions.php
