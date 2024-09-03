@@ -3,9 +3,15 @@
 <head prefix="og: https://ogp.me/ns#">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ヨコチヨシオのポートフォリオサイトです。主にWEBデザインを中心にご紹介していきます。">
+    <!-- ファビコン設置 -->
+    <link rel="icon" href="img/favicon.ico" sizes="32x32"><!-- 32×32 -->
+    <link rel="icon" href="img/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png"><!-- 180×180 -->
+    <link rel="manifest" href="img/manifest.webmanifest">
 
     <title>Web Challenger - Home -</title>
+
+    <meta name="description" content="ヨコチヨシオのポートフォリオサイトです。主にWEBデザインを中心にご紹介していきます。">
 
     <!-- OGPタグ/ソーシャルメディア専用設定 ※WP設置の際はCMS側で再設定 -->
     <meta property="og:url" content="#" />
@@ -18,35 +24,38 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>この文はh1タグです。</h1>
-    <h2>この文はh2タグです。</h2>
-    <h3>この文はh3タグです。</h3>
-    <h4>この文はh4タグです。</h4>
-    <br>
-    <ul>
-        <li>この文はlistタグです。</li>
-        <li>この文はlistタグです。</li>
-        <li>この文はlistタグです。</li>
-        <li>この文はlistタグです。</li>
-        <li>この文はlistタグです。</li>
-    </ul>
-    <hr>
-    <ol>
-        <li>この文は順序付きlistタグです。</li>
-        <li>この文は順序付きlistタグです。</li>
-        <li>この文は順序付きlistタグです。</li>
-        <li>この文は順序付きlistタグです。</li>
-        <li>この文は順序付きlistタグです。</li>
-    </ol>
-    <hr>
-    <p>この文はpタグです。</p>
-    <a href="#">この文はaタグです。</a> <br>
-    <strong>この文はstrongタグです。</strong>
-    <hr>
-    <dl>
-        <dt>この文はdtタグです。
-            <dd>この文はddタグです。</dd>
-        </dt>
-    </dl>
+    <header>
+        <h1><span>#myLife {</span> Web<span>:</span>Challenger <span>;}</span> /* Y.Yokochi Portfolio Site */</h1>
+        <nav id="main-nav">
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">WORKS</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+
+        <div id="main-imege"></div>
+
+        <section id="about">
+            <h2>ABOUT</h2>
+            <div id="about-contents">
+                <div id="author-image">
+                    <img src="" alt="">
+                </div>
+                <div id="author-introduction">
+                    <p></p>
+                    <p>more>></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="works">
+            <h2>WORKS</h2>
+            div#works-list>div#web>img+h3
+        </section>
+    </main>
 </body>
 </html>
