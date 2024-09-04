@@ -1,14 +1,20 @@
 @charset "UTF-8";
 
-/* CSSをリセット */
+/* RESET -------------------------------------------------------- */
 @import url("tnc_reset.css");
 
 /* ----------------------------------------------------------------
-サイト名：ポートフォリオサイト　
+サイト名：Web Challenger - Y.Yokochi Portfolio Site -　
 作者：Yoshio Yokochi
 更新日：2024/08/27  作業箇所：
 ------------------------------------------------------------------*/
 
+/* COMMON  ------------------------------------------------------ */
+/* GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+* {
+    font-family: "Noto Sans", system-ui;
+}
 /* 
 index.html
 ------------------------------------------------------------------*/
