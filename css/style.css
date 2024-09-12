@@ -1,7 +1,6 @@
 @charset "UTF-8";
-
-/* RESET -------------------------------------------------------- */
-@import url("tnc_reset.css");
+@import url("tnc_reset.css"); /* RESET  */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap'); /* GOOGLE FONTS "Noto Serif" */
 
 /* ----------------------------------------------------------------
 サイト名：Web Challenger - Y.Yokochi Portfolio Site -　
@@ -14,8 +13,6 @@ html {
     /* ブラウザ、ユーザーサイドのフォントサイズ設定を反映する指定 */
     font-size: 100%;  
 }
-/* GOOGLE FONTS "Noto Serif" */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
 
 body {
     font-family: "Helvetica Neue",
