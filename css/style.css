@@ -25,11 +25,12 @@ body {
     color: rgb(64, 64, 64);
     background: #f0efe7;
 }
+
 /* 
 header.php
 ------------------------------------------------------------------*/
 header {
-    padding: 2rem 0 0;
+    padding: 1.2rem 0 0;
     width: 1200px;
     margin: 0 auto;
     display: flex;
@@ -82,7 +83,10 @@ home.php
 
 main {
     width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto 80px;
+}
+main section {
+    margin-bottom: 2em;
 }
 main section h2 {
     font-family: "Noto Serif", serif;
@@ -111,6 +115,70 @@ main section h2 {
     margin-left: 1rem;
     background: linear-gradient(90deg, #888, transparent);
 }
+
+/* about */
+#about-contents {
+    display: flex;
+    justify-content: center;
+}
+#about-contents > div {
+    padding: 20px;
+}
+#author-image {
+    text-align: right;
+}
+#author-image img {
+    width: 300px;
+    height: 300px;
+    background-color: #888;
+    display: inline-block;
+}
+#author-introduction p {
+    margin-bottom: 20px;
+}
+#author-introduction em {
+    font-weight: bold;
+    font-size: large;
+    padding-bottom: 20px;
+    display: inline-block;
+}
+#author-introduction .more {
+    text-align: right;
+}
+
+/* works */
+#works-list {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 0 auto;
+}
+#works-list > div {
+    flex-basis: 20%;
+    text-align: center;
+    padding: 5px;
+}
+#works-list h3 {
+    font-weight: bold;
+    font-size: 1.2rem;
+    font-family: "Noto Serif", serif;
+}
+#works-list img {
+    display: inline-block;
+    width: 240px;
+    height: 240px;
+    background-color: #888;   
+}
+#works .works-link a {
+    display: block;
+    text-align: center;
+    width: 65%;
+    margin: 2rem auto;
+    padding: 10px;
+    background-color: #888;
+    color: #f0efe7;
+}
+#works .works-link
 
 /* 
 page.php
