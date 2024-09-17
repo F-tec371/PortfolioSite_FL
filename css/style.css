@@ -11,7 +11,9 @@
 /* COMMON  ------------------------------------------------------ */
 html {
     /* ブラウザ、ユーザーサイドのフォントサイズ設定を反映する指定 */
-    font-size: 100%;  
+    font-size: 100%;
+    /* ページトップに滑らかにスクロールアップして戻る設定  safari ver.15.3以下挙動 注意 */
+    scroll-behavior: smooth;
 }
 
 body {
@@ -24,6 +26,40 @@ body {
     line-height: 1.7;
     color: rgb(64, 64, 64);
     background: #f0efe7;
+}
+
+#sub-image {
+    height: 250px;
+    background-color: #888;
+    color: #f0efe7;
+    text-align: center;
+    padding-top: 35px;
+    font-size: 6rem;
+    font-family: "Noto Serif", serif;
+}
+
+/* ページトップのリンクボタン */
+.pagetop {
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    background: #f0efe7;
+    border: solid 2px rgb(64, 64, 64);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+/* 矢印作成 */
+.pagetop__arrow {
+    height: 10px;
+    width: 10px;
+    border-top: 3px solid rgb(64, 64, 64);
+    border-right: 3px solid rgb(64, 64, 64);
+    transform: translateY(20%) rotate(-45deg);
 }
 
 /* 
@@ -70,6 +106,8 @@ footer.php
 footer {
     text-align: center;
     padding: 2rem 0;
+    background-color: #888;
+    color: #f0efe7 ;
 }
 
 /* 
@@ -81,19 +119,21 @@ home.php
     background: #888 url(../images/main.jpg) no-repeat center center / cover;
 }
 
-main {
+#home main {
     width: 1200px;
-    margin: 0 auto 80px;
+    margin: 0 auto;
+    padding-bottom: 10rem;
 }
-main section {
-    margin-bottom: 2em;
+#home main section {
+    margin-bottom: 3rem;
 }
-main section h2 {
+#home main section h2 {
     font-family: "Noto Serif", serif;
     font-size: 1.5rem;
     font-weight: bold;
     text-align: center;
     padding: 1.2rem 0;
+    margin: 2rem 0;
 }
 /* タイトルの両端に線を引く */
 .side-border {
@@ -122,7 +162,7 @@ main section h2 {
     justify-content: center;
 }
 #about-contents > div {
-    padding: 20px;
+    padding: 0 20px;
 }
 #author-image {
     text-align: right;
@@ -178,11 +218,65 @@ main section h2 {
     background-color: #888;
     color: #f0efe7;
 }
-#works .works-link
 
 /* 
 page.php
 ------------------------------------------------------------------*/
+/* works.php --------------------------- */
+.works-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.works-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+/* .product-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .product-list {
+    flex: 1;
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .product-item {
+    margin-bottom: 20px;
+  }
+  
+  .category-menu {
+    width: 200px;
+    margin-left: 20px;
+  }
+  
+  .category-menu h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .category-menu ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .category-menu li {
+    margin-bottom: 5px;
+  }
+  
+  .category-menu a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .category-menu a:hover {
+    text-decoration: underline;
+  } */
 
 /* 
 sidebar.php
