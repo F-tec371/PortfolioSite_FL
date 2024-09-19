@@ -62,7 +62,19 @@ body {
     transform: translateY(20%) rotate(-45deg);
 }
 
-/* home.php 以外でコンテンツ部分の2カラム設定 */
+/* スクリーンリーダー用の非表示テキスト */
+.sr-only {
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+}
+
+  /* home.php 以外でコンテンツ部分の2カラム設定 */
 .main-container {
     display: flex;
     justify-content: space-between;
@@ -239,19 +251,19 @@ page.php
 ------------------------------------------------------------------*/
 /* works.php --------------------------- */
 .works-list {
-    display: flex;
-    flex-wrap: wrap; 
+    display: grid;
+    grid-template-columns: repeat(3, 280px);
+    gap: 3rem 2rem;
     justify-content: space-between;
 }
-.works-list a {
-    display: block;
-    flex-basis: 30%;
-}
 .works-item {
+    display: flex;
+}
+.works-item a {
+    display: block;
     border: #888 1px solid;
     border-radius: 5px;
     padding: 5px;
-    margin-bottom: 3rem;
 }
 .works-image {
     width: 100%;
@@ -265,7 +277,20 @@ page.php
     font-weight: bold;
     border-left: 2px solid #333;
 }
+.works-date {
+    margin-bottom: 5px;
+}
+.cat-web, .cat-flier, .cat-other {
+    display: inline-block;
+    padding: 0px 5px;
+    background-color: #888;
+    color: #f0efe7;
+}
+.post-date {
+    margin-left: 5px;
+}
 
+/* サイドナビゲーション */
 .category-menu {
     margin-left: 20px;
     font-family: "Noto Serif", serif;
@@ -300,6 +325,38 @@ color: #f0efe7;
     background-color: #888;
     color: #f0efe7;
 } 
+
+/* ページネーション */
+.pagination {
+    display: block;
+    text-align: center;
+    margin: 5rem 0;
+}
+.nav-links {
+    display: inline-block;
+}
+.page-numbers {
+    display: inline-block;
+    padding: 8px 12px;
+    margin: 0 4px;
+    border: 1px solid #ddd;
+    color: #888;
+    text-decoration: none;
+    border-radius: 4px;
+}
+.page-numbers.current {
+    background-color: #333;
+    color: #fff;
+    border-color: #333;
+}
+.page-numbers:hover:not(.current) {
+    background-color: #888;
+    color: #f0efe7;
+}
+.prev.page-numbers,
+.next.page-numbers {
+    padding: 8px 16px;
+}
 
 /* 
 sidebar.php
