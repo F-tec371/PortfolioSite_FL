@@ -54,8 +54,77 @@
     
     <div class="main-container">
         <main>
+            <div class="Form">
+                <!-- 会社名input -->
+                <div class="Form-Item">
+                <label for="company-name" class="Form-Item-Label">
+                    会社名<span class="Form-Item-Label-Required">必須</span>
+                </label>
+                <input type="text" id="company-name" name="company_name" class="Form-Item-Input" aria-required="true"
+                    placeholder="例）株式会社〇〇✕✕">
+                </div>
+                <!-- 名前input -->
+                <div class="Form-Item">
+                    <label for="full-name" class="Form-Item-Label">
+                        氏名<span class="Form-Item-Label-Required">必須</span>
+                    </label>
+                    <input type="text" id="full-name" name="your_name" class="Form-Item-Input" aria-required="true"
+                        placeholder="例）〇山 ✕郎">
+                </div>
+                <!-- 電話番号input -->
+                <div class="Form-Item">
+                    <label for="phone-number" class="Form-Item-Label">
+                        電話番号<span class="Form-Item-Label-Required">必須</span>
+                    </label>
+                    <input type="tel" id="phone-number" name="tel" class="Form-Item-Input" aria-required="true"
+                        placeholder="例）000-0000-0000">
+                </div>
+                <!-- メールアドレスinput -->
+                <div class="Form-Item">
+                    <label for="email-address" class="Form-Item-Label">
+                        メールアドレス<span class="Form-Item-Label-Required">必須</span>
+                    </label>
+                    <input type="email" id="email-address" name="email" class="Form-Item-Input" aria-required="true"
+                        placeholder="例）example@gmail.com">
+                </div>
+                <!-- サイト評価ラジオボタン -->
+                <div class="Form-Item">
+                    <fieldset class="Form-Fieldset">
+                        <legend class="Form-Item-Label">本サイトの評価</legend>
+                        <div class="Form-Radio-Group">
+                            <label class="Form-Radio-Label">
+                                <input type="radio" name="site_rating" value="good" checked class="Form-Radio-Input">
+                                <span class="Form-Radio-Text">良い</span>
+                            </label>
+                            <label class="Form-Radio-Label">
+                                <input type="radio" name="site_rating" value="average" class="Form-Radio-Input">
+                                <span class="Form-Radio-Text">普通</span>
+                            </label>
+                            <label class="Form-Radio-Label">
+                                <input type="radio" name="site_rating" value="poor" class="Form-Radio-Input">
+                                <span class="Form-Radio-Text">悪い</span>
+                            </label>
+                        </div>
+                    </fieldset>
+                </div>
+                
+                <div class="Form-Item">
+                    <label for="inquiry-content" class="Form-Item-Label isMsg">
+                        お問合せ内容<span class="Form-Item-Label-Required">必須</span>
+                    </label>
+                    <textarea id="inquiry-content" name="inquiry_content" class="Form-Item-Textarea" rows="5"
+                        aria-required="true"></textarea>
+                </div>
+                
+                <div class="Form-Button">
+                    <button type="submit" class="Form-Submit">送信</button>
+                </div>
+            </div>            
+            
             <a class="pagetop" href="#"><div class="pagetop__arrow"></div></a>
+
         </main>
+
         <aside class="category-menu">
             <h3>作品カテゴリー</h3>
             <ul>
@@ -64,6 +133,7 @@
                 <li><a href="#">other</a></li>
             </ul>
         </aside>
+
     </div>
 
     <footer>
