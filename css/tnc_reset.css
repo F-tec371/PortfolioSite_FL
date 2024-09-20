@@ -4,9 +4,10 @@
 ***/
 
 /*
-    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
-    - The "symbol *" part is to solve Firefox SVG sprite bug
-    - The "html" element is excluded, otherwise a bug in Chrome breaks the CSS hyphens property (https://github.com/elad2412/the-new-css-reset/issues/36)
+    User-Agent-Stylesheet "の『display』プロパティ以外のすべてのスタイルを削除する。
+    - symbol *」の部分は、FirefoxのSVGスプライトのバグを解決するためです。
+    - html "要素は除外しています。そうしないと、ChromeのバグでCSSのハイフンプロパティが壊れてしまうからです。
+    (https://github.com/elad2412/the-new-css-reset/issues/36)
  */
  *:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
     all: unset;
@@ -20,14 +21,14 @@
     box-sizing: border-box;
 }
 
-/* Fix mobile Safari increase font-size on landscape mode */
+/* モバイルSafariの横向きモードでフォントサイズが大きくなる問題を修正 */
 html {
     -moz-text-size-adjust: none;
     -webkit-text-size-adjust: none;
     text-size-adjust: none;
 }
 
-/* Reapply the pointer cursor for anchor tags */
+/* アンカータグにポインターカーソルを再適用する */
 a, button {
     cursor: revert;
 }
@@ -37,12 +38,12 @@ ol, ul, menu, summary {
     list-style: none;
 }
 
-/* Firefox: solve issue where nested ordered lists continue numbering from parent (https://bugzilla.mozilla.org/show_bug.cgi?id=1881517) */
+/* Firefox: 入れ子になった順序付きリストが親リストの番号を引き継ぐ問題を解決 (https://bugzilla.mozilla.org/show_bug.cgi?id=1881517) */
 ol {
     counter-reset: revert;
 }
 
-/* For images to not be able to exceed their container */
+/* 画像がコンテナからはみ出さないようにする  */
 img {
     max-inline-size: 100%;
     max-block-size: 100%;
@@ -53,23 +54,23 @@ table {
     border-collapse: collapse;
 }
 
-/* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
+/* Safari - <body>テキスト入力でuser-select:noneを使用すると動作しない問題を解決する */
 input, textarea {
     -webkit-user-select: auto;
 }
 
-/* revert the 'white-space' property for textarea elements on Safari */
+/* Safariのtextarea要素の「white-space」プロパティを元に戻す */
 textarea {
     white-space: revert;
 }
 
-/* minimum style to allow to style meter element */
+/* メーター・エレメントをスタイル設定するための最小スタイル */
 meter {
     -webkit-appearance: revert;
     appearance: revert;
 }
 
-/* preformatted text - use only for this feature */
+/* プリフォーマット・テキスト - この機能にのみ使用 */
 :where(pre) {
     all: revert;
     box-sizing: border-box;
@@ -86,9 +87,9 @@ meter {
     display: none;
 }
 
-/* revert for bug in Chromium browsers
-   - fix for the content editable attribute will work properly.
-   - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element*/
+/* Chromiumブラウザのバグを修正
+    - コンテンツ編集可能属性の修正は正しく機能する。
+    - webkit-user-select:auto;ラッパー要素でuser-select:noneを使用する場合にSafari用に追加。*/
 :where([contenteditable]:not([contenteditable="false"])) {
     -moz-user-modify: read-write;
     -webkit-user-modify: read-write;
@@ -97,7 +98,7 @@ meter {
     -webkit-user-select: auto;
 }
 
-/* apply back the draggable feature - exist only in Chromium and Safari */
+/* ChromiumとSafariのみに存在する、ドラッグ可能な機能を戻す。 */
 :where([draggable="true"]) {
     -webkit-user-drag: element;
 }

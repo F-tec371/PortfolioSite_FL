@@ -290,6 +290,118 @@ page.php
     margin-left: 5px;
 }
 
+/* ページネーション */
+.pagination {
+    display: block;
+    text-align: center;
+    margin: 5rem 0;
+}
+.nav-links {
+    display: inline-block;
+}
+.page-numbers {
+    display: inline-block;
+    padding: 8px 12px;
+    margin: 0 4px;
+    border: 1px solid #ddd;
+    color: #888;
+    text-decoration: none;
+    border-radius: 4px;
+}
+.page-numbers.current {
+    background-color: #333;
+    color: #fff;
+    border-color: #333;
+}
+.page-numbers:hover:not(.current) {
+    background-color: #888;
+    color: #f0efe7;
+}
+.prev.page-numbers,
+.next.page-numbers {
+    padding: 8px 16px;
+}
+
+/* contact.php --------------------------- */
+.Form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.Form-Item {
+    margin-bottom: 20px;
+}
+
+.Form-Item-Label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.Form-Item-Label-Required {
+    color: #e13c33;
+    margin-left: 5px;
+}
+
+.Form-Item-Input,
+.Form-Item-Textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* フィールドセットのスタイルを復元 */
+fieldset.Form-Fieldset {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 0 0 20px 0;
+}
+/* ラジオボタンのスタイルを復元 */
+input[type="radio"].Form-Radio-Input {
+    -webkit-appearance: radio;
+    -moz-appearance: radio;
+    appearance: radio;
+    display: inline-block;
+    width: auto;
+    height: auto;
+    margin-right: 5px;
+}
+/* レジェンドのスタイルを設定 */
+legend.Form-Item-Label {
+    padding: 0 10px;
+}
+.Form-Radio-Group {
+    display: flex;
+    gap: 20px;
+}
+.Form-Radio-Label {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+}
+.Form-Radio-Text {
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+.Form-Submit {
+    background-color: #888;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.Form-Submit:hover {
+    background-color: #333;
+}
+
+
+/* 
+sidebar.php
+------------------------------------------------------------------*/
 /* サイドナビゲーション */
 .category-menu {
     margin-left: 20px;
@@ -325,42 +437,6 @@ color: #f0efe7;
     background-color: #888;
     color: #f0efe7;
 } 
-
-/* ページネーション */
-.pagination {
-    display: block;
-    text-align: center;
-    margin: 5rem 0;
-}
-.nav-links {
-    display: inline-block;
-}
-.page-numbers {
-    display: inline-block;
-    padding: 8px 12px;
-    margin: 0 4px;
-    border: 1px solid #ddd;
-    color: #888;
-    text-decoration: none;
-    border-radius: 4px;
-}
-.page-numbers.current {
-    background-color: #333;
-    color: #fff;
-    border-color: #333;
-}
-.page-numbers:hover:not(.current) {
-    background-color: #888;
-    color: #f0efe7;
-}
-.prev.page-numbers,
-.next.page-numbers {
-    padding: 8px 16px;
-}
-
-/* 
-sidebar.php
-------------------------------------------------------------------*/
 
 /* 
 taxonomy.php
