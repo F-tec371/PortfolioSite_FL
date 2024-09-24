@@ -75,17 +75,17 @@ body {
 }
 
   /* home.php 以外でコンテンツ部分の2カラム設定 */
-.main-container {
+.container {
     display: flex;
     justify-content: space-between;
     max-width: 1200px;
     margin: 0 auto;
     padding: 3rem 10px;
 }
-.main-container main {
+.container main {
     flex-basis: 80%;
 }
-.main-container aside {
+.container aside {
     flex-basis: 20%;
 }
 
@@ -347,8 +347,15 @@ page.php
 .Form-Item-Textarea {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid #ccc;
     border-radius: 4px;
+    &:focus {
+        border-color: #333;
+        background-color: ivory;
+    }
+}
+input[placeholder] {
+    color: #888;
 }
 
 /* フィールドセットのスタイルを復元 */
@@ -358,7 +365,7 @@ fieldset.Form-Fieldset {
     margin: 0 0 20px 0;
 }
 /* ラジオボタンのスタイルを復元 */
-input[type="radio"].Form-Radio-Input {
+.Form-Radio-Input {
     -webkit-appearance: radio;
     -moz-appearance: radio;
     appearance: radio;
@@ -366,6 +373,7 @@ input[type="radio"].Form-Radio-Input {
     width: auto;
     height: auto;
     margin-right: 5px;
+    accent-color: #333;
 }
 /* レジェンドのスタイルを設定 */
 legend.Form-Item-Label {
@@ -386,18 +394,16 @@ legend.Form-Item-Label {
 }
 
 .Form-Submit {
-    background-color: #0074d9;
+    background-color: #888;
     color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    &:hover {
+        background-color: #333;
+    }
 }
-
-.Form-Submit:hover {
-    background-color: #0056b3;
-}
-
 
 /* 
 sidebar.php
@@ -445,6 +451,77 @@ taxonomy.php
 /* 
 single.php
 ------------------------------------------------------------------*/
+.post-content {
+
+    .post-article {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+
+        .post-image {
+            flex: 1;
+            min-width: 300px;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .post-details {
+            flex: 2;
+            min-width: 300px;
+
+            .post-title {
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+
+            .post-date {
+                display: block;
+                margin-bottom: 20px;
+                color: #666;
+            }
+
+            .post-body {
+                margin-bottom: 20px;
+            }
+
+            .post-info {
+                width: 100%;
+                border-collapse: collapse;
+
+                td {
+                    border: 1px solid #888;
+                    padding: 10px;
+                    width: 33.33%;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .post-article {
+            flex-direction: column;
+
+            .post-image,
+            .post-details {
+                width: 100%;
+            }
+
+            .post-info td {
+                display: block;
+                width: 100%;
+            }
+        }
+    }
+}
+.post-navigation {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px auto;
+}
+
 
 /* 
 404.php

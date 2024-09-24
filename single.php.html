@@ -9,7 +9,7 @@
     <link rel="apple-touch-icon" href="img/apple-touch-icon.png"><!-- 180×180 -->
     <link rel="manifest" href="img/manifest.webmanifest">
 
-    <title>Web Challenger - <!-- 該当カテゴリーを表示 --> -</title>  
+    <title>Web Challenger - Single Page -</title>
 
     <meta name="description" content="ヨコチヨシオのポートフォリオサイトです。主にWEBデザインを中心にご紹介していきます。">
 
@@ -50,36 +50,41 @@
         </nav>
     </header>
 
-    <h2 id="sub-image">Web</h2>
+    <h2 id="sub-image">Single Page</h2>
     
     <div class="container">
-        <main class="post-contents">
-            <ul class="works-list">
-                <li class="works-item">
-                    <a href="single.php.html">
-                        <div class="works-image"><img src="#" alt="作品1"></div>
-                        <h4 class="works-title">作品1の名前</h4>
-                        <p class="works-date">
-                            <span class="cat-web">web</span>
-                            <time datetime="2024/09/18" class="post-date">2024.09.18</time>
-                        </p>
-                        <p class="works-description">作品1の簡単な説明がここに入ります。</p>
-                    </a>
-                </li>
-                <li class="works-item">
-                    <a href="single.php.html">
-                        <div class="works-image"><img src="#" alt="作品4"></div>
-                        <h4 class="works-title">作品4の名前</h4>
-                        <p class="works-date">
-                            <span class="cat-web">web</span>
-                            <time datetime="2024/09/18" class="post-date">2024.09.18</time>
-                        </p>
-                        <p class="works-description">作品4の簡単な説明がここに入ります。</p>
-                    </a>
-                </li>
-                <!-- 他の作品アイテムが続きます -->
-            </ul>
-            <a class="pagetop" href="#"><div class="pagetop__arrow"></div></a>
+        <main class="post-content">
+            <article class="post-article">
+                <div class="post-image">
+                    <img src="#" alt="作品画像">
+                </div>
+                <section class="post-details">
+                    <h4 class="post-title">
+                        作品1の名前
+                    </h4>
+                    <timedatetime="2024/09/18" class="post-date">
+                        2024.09.18
+                    </time>
+                    <div class="post-body">
+                        <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト。 <br>
+                        テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト。</p>
+                    </div>
+                    <table class="post-info">
+                        <tr>
+                            <td>
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+                    </table>
+                </section>
+            </article>
         </main>
         <aside class="category-menu">
             <h3>作品カテゴリー</h3>
@@ -89,17 +94,12 @@
                 <li><a href="#">other</a></li>
             </ul>
         </aside>
+
     </div>
 
-    <nav class="pagination">
-        <h3 class="sr-only">ページネーションリンク</h3>
-        <div class="nav-links">
-            <a aria-label="Previous page" class="prev page-numbers" href="...">« 前へ</a>
-            <a aria-label="Page 1" class="page-numbers" href="...">1</a>
-            <span aria-label="Page 2" aria-current="page" class="page-numbers current">2</span>
-            <a aria-label="Page 3" class="page-numbers" href="...">3</a>
-            <a aria-label="Next page" class="next page-numbers" href="...">次へ »</a>
-        </div>
+    <nav class="post-navigation">
+        <a href="#" rel="prev"><< 前の記事</a>
+        <a href="#" rel="next">次の記事 >></a>
     </nav>
 
     <footer>
