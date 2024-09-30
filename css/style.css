@@ -102,11 +102,10 @@ header.php
 ------------------------------------------------------------------*/
 header {
     padding: 1.2rem 0 0;
-    width: 1200px;
-    margin: 0 auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: flex-end;
+    gap: 20vw;
 }
 .site-title h1 {
     font-size: 2.5rem;
@@ -148,8 +147,10 @@ footer {
 /* 
 home.php
 ------------------------------------------------------------------*/
-
+/* トップイメージの背景グラデーション */
 #main-image {
+    position: relative;
+    z-index: 0;
     height: 500px;
     background:linear-gradient(45deg, #ebedee,#e0c3fc,#8ec5fc,#ebedee);
     background-size: 200% 200%;
@@ -167,6 +168,9 @@ home.php
     100% {
         background-position: 0% 50%;
     }
+}
+.top-image {
+
 }
 #home main {
     width: 1200px;
