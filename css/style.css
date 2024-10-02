@@ -97,6 +97,11 @@ body {
     transform: scale(1.1);
 }
 
+/* aタグ ボックスリンク用設定 */
+.link-wrap {
+    display: block;
+}
+
 /* 
 header.php
 ------------------------------------------------------------------*/
@@ -177,22 +182,27 @@ home.php
 }
 
 /* home コンテンツ部分 */
-#home main {
-    width: 1200px;
-    margin: 0 auto;
-    padding-bottom: 10rem;
+#home {
+    main {
+        width: 1200px;
+        margin: 0 auto;
+        padding-bottom: 10rem;
+
+        section {
+            margin-bottom: 3rem;
+
+            h2 {
+                font-family: "Noto Serif", serif;
+                font-size: 1.5rem;
+                font-weight: bold;
+                text-align: center;
+                padding: 1.2rem 0;
+                margin: 2rem 0;
+            }
+        }
+    }
 }
-#home main section {
-    margin-bottom: 3rem;
-}
-#home main section h2 {
-    font-family: "Noto Serif", serif;
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-align: center;
-    padding: 1.2rem 0;
-    margin: 2rem 0;
-}
+
 /* タイトルの両端に線を引く */
 .side-border {
     display: flex;
