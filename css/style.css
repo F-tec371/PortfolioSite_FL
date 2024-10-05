@@ -158,9 +158,10 @@ home.php
     display: block;
     width: 100%;
     height: 500px;
-    background:linear-gradient(45deg, #ebedee,#e0c3fc,#8ec5fc,#ebedee);
+    background: linear-gradient(45deg, #ebedee,#e0c3fc,#8ec5fc,#ebedee),
+        no-repeat, center center / cover;
     background-size: 200% 200%;
-    animation: bg-gradient 15s ease infinite;   no-repeat center center / cover;
+    animation: bg-gradient 15s ease infinite;
 }
 @keyframes bg-gradient {
     0% {
@@ -230,27 +231,72 @@ home.php
     display: flex;
     justify-content: center;
     gap: 5rem;
+
+    #author-image {
+        text-align: right;
+
+        img {
+            width: 300px;
+            height: 300px;
+            background-color: #888;
+            display: inline-block;
+        }
+    }
+
+    #author-introduction {
+        p {
+            margin-bottom: 20px;
+        }
+
+        em {
+            font-weight: bold;
+            font-size: large;
+            padding-bottom: 20px;
+            display: inline-block;
+        }
+
+        .more {
+            text-align: right;
+            position: relative;
+
+            .flash-btn {
+                display: inline-block;
+                width: 120px;
+                height: 30px;
+                background: linear-gradient(to right,#5faff1 0%, #7db9e8 50%, #8ec5fc 100%); 
+                color: #fff;
+                padding-right:10px;
+                padding-top: 2px;
+                overflow: hidden;
+                transition: all 0.3s ease;
+                position: relative;
+
+                &:hover {
+                    opacity: .7;
+                }
+                &::before {
+                    position: absolute;
+                    content: '';
+                    top: -180px;
+                    left: -20px;
+                    width: 30px;
+                    height: 100%;
+                    background-color: #fff;
+                    animation: flashbtn 3s ease-in-out infinite;
+                }
+                &:hover::before {
+                    animation-play-state: paused;
+                }
+            }
+
+        }
+    }
 }
-#author-image {
-    text-align: right;
-}
-#author-image img {
-    width: 300px;
-    height: 300px;
-    background-color: #888;
-    display: inline-block;
-}
-#author-introduction p {
-    margin-bottom: 20px;
-}
-#author-introduction em {
-    font-weight: bold;
-    font-size: large;
-    padding-bottom: 20px;
-    display: inline-block;
-}
-#author-introduction .more {
-    text-align: right;
+@keyframes flashbtn {
+    0% { transform: scale(0) rotate(45deg); opacity: 0; }
+    80% { transform: scale(0) rotate(45deg); opacity: 0.5; }
+    81% { transform: scale(4) rotate(45deg); opacity: 1; }
+    100% { transform: scale(50) rotate(45deg); opacity: 0; }
 }
 
 /* works */
@@ -301,8 +347,8 @@ home.php
                 }
             }
             h3 {
-                border-top: #8ec5fc 2px dotted;
-                border-bottom: #e0c3fc 2px dotted;
+                background-color: #888;
+                color: #f0efe7;
                 margin: 20px 0 10px;
             }
         }    
@@ -315,25 +361,58 @@ home.php
     font-size: 1.2rem;
     font-family: "Noto Serif", serif;
 }
-#works .works-link {
-    display: block;
-    text-align: center;
-    width: 70%;
-    margin: 2rem auto;
-    padding: 10px;
-    color: #fff;
-    font-size: large;
-    background: linear-gradient(45deg, #e0c3fc,#8ec5fc);
-    box-shadow: 0 1.5rem 1.5rem -1.7rem hsl(200deg 50% 20% / 40%);
-    transition: all 0.3s ease;
+#works {
+    .works-link {
+        display: block;
+        text-align: center;
+        width: 70%;
+        margin: 2rem auto;
+        padding: 10px;
+        color: #fff;
+        font-size: large;
+        /* ホバーエフェクト設定 開始 */
+        position: relative;
+        transition: all 0.3s ease;
+        overflow: hidden;
+        box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+        7px 7px 20px 0px rgba(0, 0, 0, .1),
+        4px 4px 5px 0px rgba(0, 0, 0, .1);        
 
-    &.works-link:hover {
-        background: linear-gradient(45deg, #8ec5fc,#e0c3fc); 
+        &::after {
+            position: absolute;
+            content: " ";
+            z-index: -1;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #8ec5fc;
+            background-image: linear-gradient(315deg, #8ec5fc 0%, #e0c3fc 74%);
+            transition: all 0.3s ease;
+        }
+
+        &:hover {
+            background: transparent;
+            box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .5),
+                -4px -4px 6px 0 rgba(116, 125, 136, .2),
+                inset -4px -4px 6px 0 rgba(255, 255, 255, .5),
+                inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+        } 
+        &:hover::after {
+            -webkit-transform: scale(2) rotate(180deg);
+            transform: scale(2) rotate(180deg);
+            box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .5),
+                -4px -4px 6px 0 rgba(116, 125, 136, .2),
+                inset -4px -4px 6px 0 rgba(255, 255, 255, .5),
+                inset 4px 4px 6px 0 rgba(116, 125, 136, .3);        
+            }
+        /* ホバーエフェクト設定 終了 */
+
+        p {
+        border: 1px solid #fff;
+        padding: 20px;
+        }
     }
-}
-#works .works-link p {
-    border: 1px solid #fff;
-    padding: 20px;
 }
 
 /* 
