@@ -1,13 +1,126 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
+<head prefix="og: https://ogp.me/ns#">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <title>Web Challenger</title>
+    <!-- ファビコン設置 -->
+    <link rel="icon" href="img/favicon.ico" sizes="32x32"><!-- 32×32 -->
+    <link rel="icon" href="img/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png"><!-- 180×180 -->
+    <link rel="manifest" href="img/manifest.webmanifest">
+
+    <title>Web Challenger - Home -</title>
+
+    <meta name="description" content="ヨコチヨシオのポートフォリオサイトです。主にWEBデザインを中心にご紹介していきます。">
+
+    <!-- OGPタグ/ソーシャルメディア専用設定 ※WP設置の際はCMS側で再設定 -->
+    <meta property="og:url" content="#" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Web Challenger - Y.Yokochi Portfolio Site -" />
+    <meta property="og:description" content="ヨコチヨシオのポートフォリオサイトです。主にWEBデザインを中心にご紹介していきます。" />
+    <meta property="og:site_name" content="Web Challenger - Y.Yokochi Portfolio Site -" />
+    <meta property="og:image" content="#" />
+
+    <!-- CSS設定 -->
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    
+<body id="home">
+    <header>
+        <hgroup class="site-title">
+            <h1>
+                <span class="decoration" aria-hidden="true" translate="no" inert>#myLife {</span>
+                Web
+                <span class="decoration" aria-hidden="true" translate="no" inert>:</span>
+                Challenger
+                <span class="decoration" aria-hidden="true" translate="no" inert>;}</span>
+            </h1>
+            <p>
+                <span class="decoration" aria-hidden="true" translate="no" inert>/*</span>
+                Y.Yokochi Portfolio Site
+                <span class="decoration" aria-hidden="true" translate="no" inert>*/</span>
+            </p>
+        </hgroup>
+        <nav id="main-nav">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="works.php.html">WORKS</a></li>
+                <li><a href="about.php.html">ABOUT</a></li>
+                <li><a href="contact.php.html">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="main-image">
+        <div class="top-image">
+
+        </div>
+    </div>
+
+    <main>
+        <section id="about">
+            <h2 class="side-border">ABOUT</h2>
+            <div id="about-contents">
+                <div id="author-image">
+                    <img src="" alt="著者イメージ画像">
+                </div>
+                <div id="author-introduction">
+                    <p>
+                        <em>私のポートフォリオサイトにようこそ！！</em><br>
+                    今後、出来上がった作品をバンバン載せていく予定です。<br>
+                    お時間のある時にご覧いただけると嬉しいです。</p>
+                    <p class="more">
+                        <a class="flash-btn" href="about.php.html">Read More >></a>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="works">
+            <h2 class="side-border">WORKS</h2>
+            <div id="works-cat">
+                <a href="#" class="link-wrap hover-big">
+                    <div id="web">
+                        <div class="icon-area">
+                            <img src="img/web_icon.png" alt="ウェブ作品のアイコン">
+                            <div class="bg-gradient-circle"></div>
+                        </div>
+                        <h3>WEB</h3>
+                        <p>ウェブサイト・バナー・ロゴの作品紹介ページです</p>
+                        
+                    </div>
+                </a>
+                <a href="#" class="link-wrap hover-big">
+                    <div id="flier">
+                        <div class="icon-area">
+                            <img src="img/flier_icon.png" alt="フライヤー作品のアイコン">
+                            <div class="bg-gradient-circle"></div>
+                        </div>
+                        <h3>FLIER</h3>
+                        <p>フライヤー作品紹介ページです</p>
+                        
+                    </div>
+                </a>
+                <a href="#" class="link-wrap hover-big">    
+                    <div id="other">
+                        <div class="icon-area">
+                            <img src="img/program_icon.png" alt="ウェブ作品のアイコン">
+                            <div class="bg-gradient-circle"></div>
+                        </div>
+                        <h3>OTHER</h3>
+                        <p>プログラム・他カテゴリー作品の紹介ページです</p>
+                        
+                    </div>
+                </a>
+            </div>
+
+            <a href="works.php.html" class="works-link">
+                <p>作品一覧ページはこちら</p>
+            </a>
+        </section>
+        <a class="pagetop" href="#"><div class="pagetop__arrow"></div></a>
+    </main>
+    <footer>
+        <small>&copy; 2024 Y.Yokochi-Web Challenger</small>
+    </footer>
 </body>
 </html>

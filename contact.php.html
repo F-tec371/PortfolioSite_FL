@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head prefix="og: https://ogp.me/ns#">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ファビコン設置 -->
+    <link rel="icon" href="img/favicon.ico" sizes="32x32"><!-- 32×32 -->
+    <link rel="icon" href="img/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png"><!-- 180×180 -->
+    <link rel="manifest" href="img/manifest.webmanifest">
+
+    <title>Web Challenger - Contact -</title>
+
+    <meta name="description" content="ヨコチヨシオのポートフォリオサイトです。主にWEBデザインを中心にご紹介していきます。">
+
+    <!-- OGPタグ/ソーシャルメディア専用設定 ※WP設置の際はCMS側で再設定 -->
+    <meta property="og:url" content="#" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Web Challenger - Y.Yokochi Portfolio Site -" />
+    <meta property="og:description" content="ヨコチヨシオのポートフォリオサイトです。主にWEBデザインを中心にご紹介していきます。" />
+    <meta property="og:site_name" content="Web Challenger - Y.Yokochi Portfolio Site -" />
+    <meta property="og:image" content="#" />
+
+    <!-- CSS設定 -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="works">
+    <header>
+        <hgroup class="site-title">
+            <h1>
+                <span class="decoration" aria-hidden="true" translate="no" inert>#myLife {</span>
+                Web
+                <span class="decoration" aria-hidden="true" translate="no" inert>:</span>
+                Challenger
+                <span class="decoration" aria-hidden="true" translate="no" inert>;}</span>
+            </h1>
+            <p>
+                <span class="decoration" aria-hidden="true" translate="no" inert>/*</span>
+                Y.Yokochi Portfolio Site
+                <span class="decoration" aria-hidden="true" translate="no" inert>*/</span>
+            </p>
+        </hgroup>
+        <nav id="main-nav">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="works.php.html">WORKS</a></li>
+                <li><a href="about.php.html">ABOUT</a></li>
+                <li><a href="contact.php.html">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h2 id="sub-image">Contact</h2>
+    
+    <div class="container">
+        <main class="post-contents">
+            <div class="Form">
+                <!-- 会社名input -->
+                <div class="Form-Item">
+                <label for="company-name" class="Form-Item-Label">
+                    会社名<span class="Form-Item-Label-Required">必須</span>
+                </label>
+                <input type="text" id="company-name" name="company_name" class="Form-Item-Input" aria-required="true"
+                    placeholder="例）株式会社〇〇✕✕">
+                </div>
+                <!-- 名前input -->
+                <div class="Form-Item">
+                    <label for="full-name" class="Form-Item-Label">
+                        氏名<span class="Form-Item-Label-Required">必須</span>
+                    </label>
+                    <input type="text" id="full-name" name="your_name" class="Form-Item-Input" aria-required="true"
+                        placeholder="例）〇山 ✕郎">
+                </div>
+                <!-- 電話番号input -->
+                <div class="Form-Item">
+                    <label for="phone-number" class="Form-Item-Label">
+                        電話番号<span class="Form-Item-Label-Required">必須</span>
+                    </label>
+                    <input type="tel" id="phone-number" name="tel" class="Form-Item-Input" aria-required="true"
+                        placeholder="例）000-0000-0000">
+                </div>
+                <!-- メールアドレスinput -->
+                <div class="Form-Item">
+                    <label for="email-address" class="Form-Item-Label">
+                        メールアドレス<span class="Form-Item-Label-Required">必須</span>
+                    </label>
+                    <input type="email" id="email-address" name="email" class="Form-Item-Input" aria-required="true"
+                        placeholder="例）example@gmail.com">
+                </div>
+                <!-- サイト評価ラジオボタン -->
+                <div class="Form-Item">
+                    <fieldset class="Form-Fieldset">
+                        <legend class="Form-Item-Label">本サイトの評価</legend>
+                        <div class="Form-Radio-Group">
+                            <label class="Form-Radio-Label">
+                                <input type="radio" name="site_rating" value="good" checked class="Form-Radio-Input">
+                                <span class="Form-Radio-Text">良い</span>
+                            </label>
+                            <label class="Form-Radio-Label">
+                                <input type="radio" name="site_rating" value="average" class="Form-Radio-Input">
+                                <span class="Form-Radio-Text">普通</span>
+                            </label>
+                            <label class="Form-Radio-Label">
+                                <input type="radio" name="site_rating" value="poor" class="Form-Radio-Input">
+                                <span class="Form-Radio-Text">悪い</span>
+                            </label>
+                        </div>
+                    </fieldset>
+                </div>
+                
+                <div class="Form-Item">
+                    <label for="inquiry-content" class="Form-Item-Label isMsg">
+                        お問合せ内容<span class="Form-Item-Label-Required">必須</span>
+                    </label>
+                    <textarea id="inquiry-content" name="inquiry_content" class="Form-Item-Textarea" rows="5"
+                        aria-required="true"></textarea>
+                </div>
+                
+                <div class="Form-Button">
+                    <button type="submit" class="Form-Submit">送信</button>
+                </div>
+            </div>            
+            
+            <a class="pagetop" href="#"><div class="pagetop__arrow"></div></a>
+
+        </main>
+
+        <aside class="category-menu">
+            <h3>作品カテゴリー</h3>
+            <ul>
+                <li><a href="#">web</a></li>
+                <li><a href="#">flier</a></li>
+                <li><a href="#">other</a></li>
+            </ul>
+        </aside>
+
+    </div>
+
+    <footer>
+        <small>&copy; 2024 Y.Yokochi-Web Challenger</small>
+    </footer>
+</body>
+</html>
