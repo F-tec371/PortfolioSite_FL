@@ -277,7 +277,8 @@ home.php
     height: 500px;
 
     .catchphrase {
-        flex-basis: 800px;
+        width: 800px;
+        height: 300px;
         align-self: center;
         text-align: center;
         color: #fff;
@@ -291,19 +292,17 @@ home.php
             content: "{";
             font-size: 16rem;
             font-weight: 200;
-            width: 50px;
-            height: 200px;
             position: absolute;
             left: -5rem;
-            bottom: 60%;
+            bottom: -1.5rem;
         }
         &::after {
             content: "\}";
             font-size: 16rem;
             font-weight: 200;
             position: absolute;
-            right: -80px;
-            top: -40%;
+            right: -5rem;
+            bottom: -1.5rem;
         }
     } 
 }
@@ -709,38 +708,52 @@ sidebar.php
 .category-menu {
     margin-left: 20px;
     font-family: "Noto Serif", serif;
-}
 
-.category-menu h3 {
-font-size: 1.5rem;
-font-weight: 200;
-padding-left: 10px;
-margin-bottom: 10px;
-background-color: #888;
-color: #f0efe7;
-text-align: center;
-}
+    h3 {
+        font-size: 1.3rem;
+        font-weight: bold;
+        padding: 10px;
+        margin-bottom: 10px;
+        background-color: #888;
+        color: #fff;
+        text-align: center;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
 
-.category-menu ul {
-    text-align: center;
-    font-size: 1.2rem;
-}
+    ul {
+        //text-align: center;
+        font-size: 1.2rem;
+    }
 
-.category-menu li {
-    display: block;
-    padding: 5px 0;
-    margin-bottom: 5px;
-    border-bottom: 2px dotted #333;
-}
+    li {
+        
+        display: flex;
+        width: 100%;
+        padding: 5px 0;
+        margin-bottom: 5px;
+        border-bottom: 2px dotted #333;
 
-.category-menu a {
-    display: block;
-    color: #333;
+        &:nth-child(1) {
+            list-style: url(../img/web_icon_s.png) inside ;
+        }
+        &:nth-child(2) {
+           // list-style: url(../img/web_icon.png) inside;
+        }
+        &:nth-child(3) {
+           // list-style: url(../img/web_icon.png) inside;
+        }
+    }
+
+    a {
+        display: block;
+        color: #333;
+
+        &:hover {
+            background-color: #888;
+            color: #f0efe7;
+        }
+    }
 }
-.category-menu a:hover {
-    background-color: #888;
-    color: #f0efe7;
-} 
 
 /* 
 taxonomy.php
