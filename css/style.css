@@ -62,39 +62,6 @@ body {
 } 
 
 
-/* ページトップのリンクボタン 
--- 外枠設定 */
-.pagetop {
-    height: 50px;
-    width: 50px;
-    position: fixed;
-    right: 30px;
-    bottom: 30px;
-    background: linear-gradient(45deg, #e0c3fc, #8ec5fc);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 2;
-
-    /* -- 背景色指定 */
-    .pagetop-bgcolor {
-        background-color: #fff;
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-
-        /* -- 矢印整形処理 */
-        .pagetop-arrow {
-            height: 10px;
-            width: 10px;
-            border-top: 3px solid rgb(64, 64, 64);
-            border-right: 3px solid rgb(64, 64, 64);
-            transform: translateY(20%) rotate(-45deg);
-            margin: 15px auto 0;
-        }
-    }
-}
 
 
 /* スクリーンリーダー用の非表示テキスト */
@@ -146,27 +113,23 @@ header {
     justify-content: center;
     align-items: flex-end;
     gap: 20vw;
+    font-family: "Noto Serif", serif;
+    text-align: center;
 
     .site-title {
-        a {
-            display: inline-block;
-            width: 100%;
-            height: 100%;
-        }
-
-        h1,
-        p {
-            font-family: "Noto Serif", serif;
-            text-align: center;
-        }
 
         h1 {
             font-size: 2.5rem;
 
-            .decoration {
-                font-size: 1.5rem;
-                color: #888;
-                opacity: 0.5;
+            a {
+                display: inline-block;
+                width: 100%;
+                height: 100%;
+
+                .decoration {
+                    font-size: 1.5rem;
+                    color: #ccc;
+                }
             }
         }
 
@@ -174,8 +137,7 @@ header {
             font-size: 1.2rem;
 
             .decoration {
-                color: #888;
-                opacity: 0.5;
+                color: #ccc;
             }
         }
     }
@@ -265,6 +227,41 @@ footer {
     }
 }
 /* footer wave -- end -- */
+
+/* ページトップのリンクボタン 
+-- 外枠設定 */
+.pagetop {
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    background: linear-gradient(45deg, #e0c3fc, #8ec5fc);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+
+    /* -- 背景色指定 */
+    .pagetop-bgcolor {
+        background-color: #fff;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+
+        /* -- 矢印整形処理 */
+        .pagetop-arrow {
+            height: 10px;
+            width: 10px;
+            border-top: 3px solid rgb(64, 64, 64);
+            border-right: 3px solid rgb(64, 64, 64);
+            transform: translateY(20%) rotate(-45deg);
+            margin: 15px auto 0;
+        }
+    }
+}
+
 
 /* 
 home.php
@@ -841,6 +838,61 @@ Responsive Web Design
 
 @media screen and (max-width: 959px) {
 	/* 959px以下に適用されるCSS（タブレット用） */
+    header {
+        //padding: 1.2rem 0 0;
+        display: flex;
+        //flex-wrap: wrap;
+        //justify-content: center;
+        //align-items: flex-end;
+        font-family: "Noto Serif", serif;
+        text-align: center;
+    
+        .site-title {
+            width: 100%;
+    
+            h1 {
+                font-size: 2.5rem;
+    
+                a {
+                    display: inline-block;
+                    width: 100%;
+                    height: 100%;
+    
+                    .decoration {
+                        font-size: 1.5rem;
+                        color: #ccc;
+                    }
+                }
+            }
+    
+            p {
+                font-size: 1.2rem;
+    
+                .decoration {
+                    color: #ccc;
+                }
+            }
+        }
+    
+        #main-nav {
+            ul {
+                display: flex;
+                //justify-content: center;
+                font-size: 1.2rem;
+    
+                li {
+                    list-style-type: none;
+    
+                    a {
+                        text-decoration: none;
+                        color: inherit;
+                    }
+                }
+            }
+        }
+    }
+    
+    
 }
 @media screen and (max-width: 480px) {
 	/* 480px以下に適用されるCSS（スマホ用） */
