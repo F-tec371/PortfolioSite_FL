@@ -835,63 +835,30 @@ Responsive Web Design
 ------------------------------------------------------------------*/
 
 @media screen and (max-width: 959px) {
-	/* 959px以下に適用されるCSS（タブレット用） */
+    /* 959px以下に適用されるCSS（タブレット用） */
     header {
-        //padding: 1.2rem 0 0;
-        display: flex;
-        //flex-wrap: wrap;
-        //justify-content: center;
-        //align-items: flex-end;
-        font-family: "Noto Serif", serif;
-        text-align: center;
-    
+        padding: 1.2rem 0 0;
+        display: block;
+
         .site-title {
             width: 100%;
-    
-            h1 {
-                font-size: 2.5rem;
-    
-                a {
-                    display: inline-block;
-                    width: 100%;
-                    height: 100%;
-    
-                    .decoration {
-                        font-size: 1.5rem;
-                        color: #ccc;
-                    }
-                }
-            }
-    
-            p {
-                font-size: 1.2rem;
-    
-                .decoration {
-                    color: #ccc;
-                }
-            }
-        }
-    
-        #main-nav {
-            ul {
-                display: flex;
-                //justify-content: center;
-                font-size: 1.2rem;
-    
-                li {
-                    list-style-type: none;
-    
-                    a {
-                        text-decoration: none;
-                        color: inherit;
-                    }
-                }
-            }
         }
     }
-    
-    
+
+    .catchphrase {
+        width: 700px;
+        font-size: 2.5rem;
+    }
+    #home {
+        main {
+            width: 100%;
+        }
+    }
+        
+        
 }
-@media screen and (max-width: 480px) {
+
+
+    @media screen and (max-width: 480px) {
 	/* 480px以下に適用されるCSS（スマホ用） */
 }
