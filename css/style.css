@@ -14,6 +14,7 @@ html {
     font-size: 100%;
     /* ページトップに滑らかにスクロールアップして戻る設定  safari ver.15.3以下挙動 注意 */
     scroll-behavior: smooth;
+    display: inline;
 }
 
 body {
@@ -76,7 +77,7 @@ body {
     position: absolute;
 }
 
-  /* home.php 以外でコンテンツ部分の2カラム設定 */
+/* home.php 以外でコンテンツ部分の2カラム設定 */
 .container {
     display: flex;
     justify-content: space-between;
@@ -270,7 +271,6 @@ home.php
 #main-image {
     display: flex;
     justify-content: center;
-    width: 100%;
     height: 500px;
 
     .catchphrase {
@@ -308,7 +308,7 @@ home.php
 /* home コンテンツ部分 */
 #home {
     main {
-        width: 1200px;
+        max-width: 1200px;
         margin: 0 auto;
         padding-bottom: 10rem;
 
@@ -844,21 +844,202 @@ Responsive Web Design
             width: 100%;
         }
     }
+    #main-image {
+        .catchphrase {
+            padding-top: 50px;
+            &::after {
+                font-size: 14rem;
+                position: absolute;
+                right: -3rem;
+                bottom: -1.5rem;
+            }
+            &::before {
+                font-size: 14rem;
+                position: absolute;
+                left: -3rem;
+                bottom: -1.5rem;
+            }
+        }
+    }
 
-    .catchphrase {
+    #home .catchphrase {
         width: 700px;
         font-size: 2.5rem;
     }
-    #home {
-        main {
-            width: 100%;
-        }
+    #home main  {
+            width: 800px;
     }
         
         
 }
 
 
-    @media screen and (max-width: 480px) {
-	/* 480px以下に適用されるCSS（スマホ用） */
+@media screen and (max-width: 480px) {
+/* 480px以下に適用されるCSS（スマホ用） */
+
+    .hamburger {
+        display: block;
+        height: 60px;
+        margin-left: auto;
+        position: relative;
+        z-index: 10;
+        width: 60px;
+        border: none;
+        background-color: transparent;
+    }
+
+    .hamburger.-active .hamburger_line {
+        background-color: transparent;
+    }
+
+    .hamburger.-active .hamburger_line::before {
+        top: 0;
+        transform: rotate(45deg);
+    }
+
+    .hamburger.-active .hamburger_line::after {
+        top: 0;
+        transform: rotate(-45deg);
+    }
+
+    .hamburger.-active .hamburger_text::before {
+        content: '閉じる';
+    }
+
+    .hamburger_line {
+        display: block;
+        height: 2px;
+        position: absolute;
+        top: 23px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 24px;
+        background-color: #172e59;
+        transition: 0.4s;
+    }
+
+    .hamburger_line:before,
+    .hamburger_line:after {
+        content: "";
+        display: block;
+        height: 100%;
+        position: absolute;
+        width: 100%;
+        background-color: #172e59;
+        transition: inherit;
+    }
+
+    .hamburger_line:before {
+        top: -6px;
+    }
+
+    .hamburger_line:after {
+        top: 6px;
+    }
+
+    .hamburger_text {
+        position: absolute;
+        bottom: 8px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+    }
+
+    .hamburger_text::before {
+        content: "メニュー";
+        text-align: center;
+        color: #172e59;
+        font-size: 10px;
+        font-weight: 900;
+    }
+
+    .header {
+        width: 300px;
+    }
+
+    .header_nav-area {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        z-index: 9;
+        height: 100vh;
+        width: 300px;
+        visibility: hidden;
+        padding-top: 60px;
+        background-color: #fff;
+        transition: 0.4s;
+    }
+
+    .header_nav-area.-active {
+        left: 0;
+        visibility: visible;
+    }
+
+    .global-navigation {
+        padding-top: 40px;
+        padding-right: 25px;
+        padding-bottom: 120px;
+        padding-left: 25px;
+    }
+
+    .global-navigation_list>li {
+        padding-bottom: 20px;
+        border-bottom: 2px solid #e7e9ee;
+    }
+
+    .global-navigation_list>li+li {
+        margin-top: 20px;
+    }
+
+    .global-navigation_link {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: #172e59;
+        font-weight: 900;
+        transition: color 0.4s;
+        font-size: 0.875rem;
+    }
+
+    .global-navigation_link.-accordion {
+        position: relative;
+        background: none;
+        border: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        width: 100%;
+        padding: 0;
+    }
+
+    .global-navigation_link.-accordion::after {
+        content: '';
+        display: block;
+        height: 12px;
+        position: absolute;
+        top: 50%;
+        right: 5px;
+        width: 2px;
+        background-color: #ed3242;
+        transform: translateY(-50%);
+        transition: transform 0.4s;
+    }
+
+    .global-navigation_link.-accordion::before {
+        content: '';
+        display: block;
+        height: 2px;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        width: 12px;
+        background-color: #ed3242;
+        transform: translateY(-50%);
+
+    }
+
+    .global-navigation_link.-active::after {
+        transform: translateY(-50%) rotate(-90deg);
+    }
+
 }

@@ -42,15 +42,52 @@
                 <span class="decoration" aria-hidden="true" translate="no" inert>*/</span>
             </p>
         </hgroup>
+
+        <div class="menu-area">
+
+            <button id="js-hamburger" type="button" class="hamburger" aria-controls="navigation" aria-expanded="false"
+                aria-label="メニューを開く">
+
+                <span class="hamburger_line"></span>
+                <span class="hamburger_text"></span>
+
+            </button>
+
+            <div class="header_nav-area js-nav-area" id="navigation">
+
+                <nav id="js-global-navigation" class="global-navigation">
+
+                    <ul class="global-navigation_list">
+                        <li>
+                            <a href="index.html" class="global-navigation_link">
+                                HOME
+                            </a>
+                        </li>
+                        <li>
+                            <a href="works.php.html" class="global-navigation_link">
+                                WORKS
+                            </a>
+                        </li>
+                        <li>
+                            <a href="about.php.html" class="global-navigation_link">
+                                ABOUT
+                            </a>
+                        </li>
+                        <li>
+                            <a href="contact.php.html" class="global-navigation_link">
+                                CONTACT
+                            </a>
+                        </li>
         
-        <nav id="main-nav">
-            <ul>
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="works.php.html">WORKS</a></li>
-                <li><a href="about.php.html">ABOUT</a></li>
-                <li><a href="contact.php.html">CONTACT</a></li>
-            </ul>
-        </nav>
+                    </ul>
+                    <!-- 
+                    要素にフォーカスが当たった際に、メニューボタンか先頭項目にフォーカスを当てるようにJSで制御(フォーカストラップ) 
+                    -->
+                    <div id="js-focus-trap" tabindex="0"></div>
+
+                </nav>
+            </div>
+        </div>
     </header>
 
     <div id="main-image" class="bg-gradient-image">
