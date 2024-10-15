@@ -14,7 +14,6 @@ html {
     font-size: 100%;
     /* ページトップに滑らかにスクロールアップして戻る設定  safari ver.15.3以下挙動 注意 */
     scroll-behavior: smooth;
-    display: inline;
 }
 
 body {
@@ -143,23 +142,13 @@ header {
         }
     }
 
-    #main-nav {
+    .global-navigation {
         ul {
             display: flex;
             justify-content: center;
             gap: 3rem;
             margin-top: 2.5rem;
-            font-family: "Noto Serif", serif;
             font-size: 1.2rem;
-
-            li {
-                list-style-type: none;
-
-                a {
-                    text-decoration: none;
-                    color: inherit;
-                }
-            }
         }
     }
 }
@@ -843,6 +832,9 @@ Responsive Web Design
         .site-title {
             width: 100%;
         }
+        .global-navigation {
+            
+        }
     }
     #main-image {
         .catchphrase {
@@ -876,7 +868,7 @@ Responsive Web Design
 
 @media screen and (max-width: 480px) {
 /* 480px以下に適用されるCSS（スマホ用） */
-
+/* ハンバーガーメニュー設定 */
     .hamburger {
         display: block;
         height: 60px;
