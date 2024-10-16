@@ -264,7 +264,8 @@ home.php
 
     .catchphrase {
         width: 800px;
-        height: 300px;
+        height: 37%;
+        min-height: 0;   /* Safari10.1～12.0 clamp表示崩れ対策 */
         align-self: center;
         text-align: center;
         color: #fff;
@@ -280,7 +281,9 @@ home.php
             font-weight: 200;
             position: absolute;
             left: -5rem;
-            bottom: -1.5rem;
+            bottom: -50%;
+            min-height: 0;   /* Safari10.1～12.0 clamp表示崩れ対策 */
+    
         }
         &::after {
             content: "\}";
@@ -288,7 +291,9 @@ home.php
             font-weight: 200;
             position: absolute;
             right: -5rem;
-            bottom: -1.5rem;
+            bottom: -50%;
+            align-self: center;
+
         }
     } 
 }
