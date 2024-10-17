@@ -39,7 +39,7 @@ body {
 }
 
 
-/*  背景グラデーション処理  */
+/* main-image,sub-image 背景グラデーション処理  */
 .bg-gradient-image {
     background: linear-gradient(45deg, #ebedee,#e0c3fc,#8ec5fc,#ebedee),
     no-repeat, center center / cover;
@@ -115,6 +115,7 @@ header {
     gap: 20vw;
     font-family: "Noto Serif", serif;
     text-align: center;
+    position: relative;
 
     .site-title {
 
@@ -256,7 +257,7 @@ footer {
 /* 
 home.php
 ------------------------------------------------------------------*/
-/* トップイメージの背景グラデーション */
+/* トップイメージ */
 #main-image {
     display: flex;
     justify-content: center;
@@ -264,6 +265,7 @@ home.php
 
     .catchphrase {
         width: 800px;
+        padding: 0 70px;
         height: 37%;
         min-height: 0;   /* Safari10.1～12.0 clamp表示崩れ対策 */
         align-self: center;
@@ -272,29 +274,8 @@ home.php
         font-size: clamp(1rem, 0.091rem + 3.88vw, 3rem) ;
         font-weight: bold;
         font-family: "Noto Serif", serif;
+        /* 背景グラデーション */
         text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        position: relative;
-
-        &::before {
-            content: "{";
-            font-size: clamp(4.3rem, 0.045rem + 21.27vw, 16rem);
-            font-weight: 200;
-            position: absolute;
-            left: -5rem;
-            bottom: -50%;
-            min-height: 0;   /* Safari10.1～12.0 clamp表示崩れ対策 */
-    
-        }
-        &::after {
-            content: "\}";
-            font-size: clamp(4.3rem, 0.045rem + 21.27vw, 16rem);
-            font-weight: 200;
-            position: absolute;
-            right: -5rem;
-            bottom: -50%;
-            align-self: center;
-
-        }
     } 
 }
 
@@ -304,7 +285,7 @@ home.php
     main {
         max-width: 1200px;
         margin: 0 auto;
-        padding-bottom: 10rem;
+        padding: 0 4% 10rem;
 
         section {
             margin-bottom: 3rem;
@@ -841,31 +822,12 @@ Responsive Web Design
         }
     }
 
-    /* #main-image {
-        .catchphrase {
-            padding-top: 50px;
-            &::after {
-                font-size: 14rem;
-                position: absolute;
-                right: -3rem;
-                bottom: -1.5rem;
-            }
-            &::before {
-                font-size: 14rem;
-                position: absolute;
-                left: -3rem;
-                bottom: -1.5rem;
-            }
-        } */
-    }
-
     #home .catchphrase {
         max-width: 700px;
     }
     #home main  {
-            max-width: 800px;
+        max-width: 800px;
     }
-        
         
 }
 
@@ -1038,7 +1000,30 @@ Responsive Web Design
     transform: translateY(-50%) rotate(-90deg);
 }
 
-/* about */
+/* home- main-image */
+.site-title {
+    position: absolute;
+    top: 120px;
+
+    h1, p {
+        color: #fff;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);           
+    }
+}
+.decoration {
+    color: #888 !important;
+    text-shadow: none;
+}
+
+#main-image {
+    height: 300px;
+
+    .catchphrase {
+        display: none;
+    }
+}
+
+/* home- about-part */
 #about-contents {
     display: flex;
     flex-direction: column;
@@ -1047,11 +1032,25 @@ Responsive Web Design
 
     #author-image {
         width: 100%;
+        text-align: center;
     }
     #author-introduction {
         width: 100%;
     }
 
-}    
+}
+
+/* 各ページ　h2タイトル　設定 */
+#sub-image {
+    height: 250px;
+    text-align: center;
+    padding-top: 65px;
+    font-size: 4rem;
+    font-family: "Noto Serif", serif;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);           
+}
+
+
 
 }
