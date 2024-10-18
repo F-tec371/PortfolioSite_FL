@@ -108,19 +108,18 @@ body {
 header.php
 ------------------------------------------------------------------*/
 header {
-    padding: 1.2rem 0 0;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
     gap: 20vw;
     font-family: "Noto Serif", serif;
-    text-align: center;
     position: relative;
+    padding-top: 1.2rem;
 
     .site-title {
+        text-align: center;
 
         h1 {
-            font-size: 2.5rem;
+            font-size: 2.5rem; 
 
             a {
                 display: inline-block;
@@ -130,6 +129,7 @@ header {
                 .decoration {
                     font-size: 1.5rem;
                     color: #ccc;
+                    display: inline-block;
                 }
             }
         }
@@ -163,14 +163,15 @@ footer {
     position: relative;
     text-align: center;
     padding: 2rem 0;
-    background-color: #BAAFFD;
+    background-color: #a799f7;
     color: #fff;
+    height: 65px;
 }
 /* footer wave -- start -- */
 .footer_wave {
     position: absolute;
     left: 0;
-    top: -48px;
+    bottom: 45%;
     width: 100%;
 }
 
@@ -209,7 +210,6 @@ footer {
     max-height: 100vh;
     margin: 0;
     bottom: 0px;
-    opacity: 0.7;
 }
 
 @media (max-width: 50em) {
@@ -265,8 +265,6 @@ home.php
 
     .catchphrase {
         width: 800px;
-        padding: 0 70px;
-        height: 37%;
         min-height: 0;   /* Safari10.1～12.0 clamp表示崩れ対策 */
         align-self: center;
         text-align: center;
@@ -335,6 +333,7 @@ home.php
         img {
             display: inline-block;
             border-radius: 50%;
+            max-width: 300px;
         }
     }
 
@@ -358,7 +357,7 @@ home.php
                 display: inline-block;
                 width: 120px;
                 height: 30px;
-                background: #9D8DFC; 
+                background: #a799f7; 
                 color: #fff;
                 padding-right:10px;
                 padding-top: 2px;
@@ -403,7 +402,7 @@ home.php
     margin: 0 auto;
 
     a {
-        flex-basis: 250px;
+        flex-basis: 30%;
         padding: 5px;
         margin: 2rem 0 5rem;
         box-shadow:
@@ -461,7 +460,7 @@ home.php
     .works-link {
         display: block;
         text-align: center;
-        width: 70%;
+        width: 100%;
         margin: 2rem auto;
         padding: 10px;
         color: #fff;
@@ -483,7 +482,7 @@ home.php
             width: 100%;
             height: 100%;
             background-color: #8ec5fc;
-            background: linear-gradient(315deg, #8ec5fc 0%, #e0c3fc 74%);
+            background: linear-gradient(315deg, #8ec5fc 0%, #a799f7 74%);
             transition: all 0.3s ease;
         }
 
@@ -811,11 +810,11 @@ single.php
 Responsive Web Design
 ------------------------------------------------------------------*/
 
-@media screen and (max-width: 959px) {
+@media screen and（min-width: 481px）and (max-width: 959px) {
     /* 959px以下に適用されるCSS（タブレット用） */
     header {
-        padding: 1.2rem 0 0;
         display: block;
+        padding-top: 1.2rem;
 
         .site-title {
             width: 100%;
@@ -833,224 +832,270 @@ Responsive Web Design
 
 
 @media screen and (max-width: 480px) {
-/* 480px以下に適用されるCSS（スマホ用） */
-/* ハンバーガーメニュー設定 */
-.hamburger {
-    display: block;
-    height: 60px;
-    margin-left: auto;
-    position: relative;
-    z-index: 10;
-    width: 60px;
-    border: none;
-    background-color: transparent;
-}
+    /* 480px以下に適用されるCSS（スマホ用） */
+    header {
+        padding-top: 0;
+    }
 
-.hamburger.-active .hamburger_line {
-    background-color: transparent;
-}
-
-.hamburger.-active .hamburger_line::before {
-    top: 0;
-    transform: rotate(45deg);
-}
-
-.hamburger.-active .hamburger_line::after {
-    top: 0;
-    transform: rotate(-45deg);
-}
-
-.hamburger.-active .hamburger_text::before {
-    content: '閉じる';
-}
-
-.hamburger_line {
-    display: block;
-    height: 2px;
-    position: absolute;
-    top: 23px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 24px;
-    background-color: #172e59;
-    transition: 0.4s;
-}
-
-.hamburger_line:before,
-.hamburger_line:after {
-    content: "";
-    display: block;
-    height: 100%;
-    position: absolute;
-    width: 100%;
-    background-color: #172e59;
-    transition: inherit;
-}
-
-.hamburger_line:before {
-    top: -6px;
-}
-
-.hamburger_line:after {
-    top: 6px;
-}
-
-.hamburger_text {
-    position: absolute;
-    bottom: 8px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-}
-
-.hamburger_text::before {
-    content: "メニュー";
-    text-align: center;
-    color: #172e59;
-    font-size: 10px;
-    font-weight: 900;
-}
-
-.header {
-    width: 300px;
-}
-
-.header_nav-area {
-    position: fixed;
-    top: 0;
-    left: -100%;
-    z-index: 9;
-    height: 100vh;
-    width: 300px;
-    visibility: hidden;
-    padding-top: 60px;
-    background-color: #fff;
-    transition: 0.4s;
-}
-
-.header_nav-area.-active {
-    left: 0;
-    visibility: visible;
-}
-
-.global-navigation {
-    padding-top: 40px;
-    padding-right: 25px;
-    padding-bottom: 120px;
-    padding-left: 25px;
-}
-
-.global-navigation_list>li {
-    padding-bottom: 20px;
-    border-bottom: 2px solid #e7e9ee;
-}
-
-.global-navigation_list>li+li {
-    margin-top: 20px;
-}
-
-.global-navigation_link {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: #172e59;
-    font-weight: 900;
-    transition: color 0.4s;
-    font-size: 0.875rem;
-}
-
-.global-navigation_link.-accordion {
-    position: relative;
-    background: none;
-    border: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    width: 100%;
-    padding: 0;
-}
-
-.global-navigation_link.-accordion::after {
-    content: '';
-    display: block;
-    height: 12px;
-    position: absolute;
-    top: 50%;
+    /* ページトップのリンクボタン 
+-- 外枠設定 */
+.pagetop {
+    width: 20px;
+    height: 20px;
     right: 5px;
-    width: 2px;
-    background-color: #ed3242;
-    transform: translateY(-50%);
-    transition: transform 0.4s;
-}
-
-.global-navigation_link.-accordion::before {
-    content: '';
-    display: block;
-    height: 2px;
-    position: absolute;
-    top: 50%;
-    right: 0;
-    width: 12px;
-    background-color: #ed3242;
-    transform: translateY(-50%);
-
-}
-
-.global-navigation_link.-active::after {
-    transform: translateY(-50%) rotate(-90deg);
-}
-
-/* home- main-image */
-.site-title {
-    position: absolute;
-    top: 120px;
-
-    h1, p {
-        color: #fff;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);           
-    }
-}
-.decoration {
-    color: #888 !important;
-    text-shadow: none;
-}
-
-#main-image {
-    height: 300px;
-
-    .catchphrase {
-        display: none;
-    }
-}
-
-/* home- about-part */
-#about-contents {
+    bottom: 15px;
+    background: linear-gradient(45deg, #e0c3fc, #8ec5fc);
+    border-radius: 50%;
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    gap: 5rem;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
 
-    #author-image {
+    /* -- 背景色指定 */
+    .pagetop-bgcolor {
+        background-color: #fff;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+
+        /* -- 矢印整形処理 */
+        .pagetop-arrow {
+            height: 10px;
+            width: 10px;
+            border-top: 3px solid rgb(64, 64, 64);
+            border-right: 3px solid rgb(64, 64, 64);
+            transform: translateY(20%) rotate(-45deg);
+            margin: 15px auto 0;
+        }
+    }
+
+
+    /* ハンバーガーメニュー設定 */
+    .hamburger {
+        display: block;
+        height: 60px;
+        margin-left: auto;
+        position: relative;
+        z-index: 10;
+        width: 60px;
+        border: none;
+        background-color: transparent;
+    }
+
+    .hamburger.-active .hamburger_line {
+        background-color: transparent;
+    }
+
+    .hamburger.-active .hamburger_line::before {
+        top: 0;
+        transform: rotate(45deg);
+    }
+
+    .hamburger.-active .hamburger_line::after {
+        top: 0;
+        transform: rotate(-45deg);
+    }
+
+    .hamburger.-active .hamburger_text::before {
+        content: '閉じる';
+    }
+
+    .hamburger_line {
+        display: block;
+        height: 2px;
+        position: absolute;
+        top: 23px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 24px;
+        background-color: #172e59;
+        transition: 0.4s;
+    }
+
+    .hamburger_line:before,
+    .hamburger_line:after {
+        content: "";
+        display: block;
+        height: 100%;
+        position: absolute;
         width: 100%;
+        background-color: #172e59;
+        transition: inherit;
+    }
+
+    .hamburger_line:before {
+        top: -6px;
+    }
+
+    .hamburger_line:after {
+        top: 6px;
+    }
+
+    .hamburger_text {
+        position: absolute;
+        bottom: 8px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+    }
+
+    .hamburger_text::before {
+        content: "メニュー";
         text-align: center;
+        color: #172e59;
+        font-size: 10px;
+        font-weight: 900;
     }
-    #author-introduction {
+
+    .header {
+        width: 300px;
+    }
+
+    .header_nav-area {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        z-index: 9;
+        height: 100vh;
+        width: 300px;
+        visibility: hidden;
+        padding-top: 60px;
+        background-color: #fff;
+        transition: 0.4s;
+    }
+
+    .header_nav-area.-active {
+        left: 0;
+        visibility: visible;
+    }
+
+    .global-navigation {
+        padding-top: 40px;
+        padding-right: 25px;
+        padding-bottom: 120px;
+        padding-left: 25px;
+    }
+
+    .global-navigation_list>li {
+        padding-bottom: 20px;
+        border-bottom: 2px solid #e7e9ee;
+    }
+
+    .global-navigation_list>li+li {
+        margin-top: 20px;
+    }
+
+    .global-navigation_link {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: #172e59;
+        font-weight: 900;
+        transition: color 0.4s;
+        font-size: 0.875rem;
+    }
+
+    .global-navigation_link.-accordion {
+        position: relative;
+        background: none;
+        border: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
         width: 100%;
+        padding: 0;
     }
 
-}
+    .global-navigation_link.-accordion::after {
+        content: '';
+        display: block;
+        height: 12px;
+        position: absolute;
+        top: 50%;
+        right: 5px;
+        width: 2px;
+        background-color: #ed3242;
+        transform: translateY(-50%);
+        transition: transform 0.4s;
+    }
 
-/* 各ページ　h2タイトル　設定 */
-#sub-image {
-    height: 250px;
-    text-align: center;
-    padding-top: 65px;
-    font-size: 4rem;
-    font-family: "Noto Serif", serif;
-    color: #fff;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);           
-}
+    .global-navigation_link.-accordion::before {
+        content: '';
+        display: block;
+        height: 2px;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        width: 12px;
+        background-color: #ed3242;
+        transform: translateY(-50%);
 
+    }
 
+    .global-navigation_link.-active::after {
+        transform: translateY(-50%) rotate(-90deg);
+    }
+
+    /* home- main-image */
+    .site-title {
+        position: absolute;
+        top: 110%;
+
+        h1,
+        p {
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+    }
+
+    .decoration {
+        color: #888 !important;
+        text-shadow: none;
+    }
+
+    #main-image {
+        height: 300px;
+
+        .catchphrase {
+            display: none;
+        }
+    }
+
+    /* home- about-part */
+    #about-contents {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 5rem;
+
+        #author-image {
+            width: 100%;
+            text-align: center;
+        }
+
+        #author-introduction {
+            width: 100%;
+        }
+
+    }
+
+    /* home- works-part */
+    #works-cat {
+        a {
+            flex-basis: 100%;
+            margin: 2rem 0;
+        }
+    }
+
+    /* 各ページ　h2タイトル　設定 */
+    #sub-image {
+        height: 250px;
+        text-align: center;
+        padding-top: 65px;
+        font-size: 4rem;
+        font-family: "Noto Serif", serif;
+        color: #fff;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
 
 }
