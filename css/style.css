@@ -108,9 +108,11 @@ body {
 header.php
 ------------------------------------------------------------------*/
 header {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
-    justify-content: center;
-    gap: 20vw;
+    justify-content: space-around;
+    flex-wrap: wrap;
     font-family: "Noto Serif", serif;
     position: relative;
     padding-top: 1.2rem;
@@ -147,6 +149,7 @@ header {
         ul {
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
             gap: 3rem;
             margin-top: 2.5rem;
             font-size: 1.2rem;
@@ -320,7 +323,7 @@ home.php
     background: linear-gradient(90deg, #ebedee,#e0c3fc,#8ec5fc,#ebedee, transparent);
 }
 
-/* about */
+/* home-about */
 #about-contents {
     display: flex;
     justify-content: center;
@@ -393,16 +396,16 @@ home.php
     100% { transform: scale(50) rotate(45deg); opacity: 0; }
 }
 
-/* works */
+/* home-works */
 #works-cat {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     flex-wrap: wrap;
     gap: 2rem;
     margin: 0 auto;
 
     a {
-        flex-basis: 30%;
+        flex: 1 1 25%;
         padding: 5px;
         margin: 2rem 0 5rem;
         box-shadow:
@@ -810,7 +813,7 @@ single.php
 Responsive Web Design
 ------------------------------------------------------------------*/
 
-@media screen and（min-width: 481px）and (max-width: 959px) {
+@media screen and (max-width: 959px) {
     /* 959px以下に適用されるCSS（タブレット用） */
     header {
         display: block;
@@ -838,204 +841,157 @@ Responsive Web Design
     }
 
     /* ページトップのリンクボタン 
--- 外枠設定 */
-.pagetop {
-    width: 20px;
-    height: 20px;
+-- 外枠設定 */ .pagetop {
     right: 5px;
     bottom: 15px;
-    background: linear-gradient(45deg, #e0c3fc, #8ec5fc);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 2;
-
-    /* -- 背景色指定 */
-    .pagetop-bgcolor {
-        background-color: #fff;
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-
-        /* -- 矢印整形処理 */
-        .pagetop-arrow {
-            height: 10px;
-            width: 10px;
-            border-top: 3px solid rgb(64, 64, 64);
-            border-right: 3px solid rgb(64, 64, 64);
-            transform: translateY(20%) rotate(-45deg);
-            margin: 15px auto 0;
+    width: 30px;
+    height: 30px;
+        /* -- 背景色指定 */
+        .pagetop-bgcolor {
+            width: 20px;
+            height: 20px;
+    
+            /* -- 矢印整形処理 */
+            .pagetop-arrow {
+                height: 8px;
+                width: 8px;
+                margin: 6px auto 0;
+            }
         }
     }
-
-
     /* ハンバーガーメニュー設定 */
-    .hamburger {
-        display: block;
-        height: 60px;
-        margin-left: auto;
-        position: relative;
-        z-index: 10;
-        width: 60px;
-        border: none;
-        background-color: transparent;
-    }
-
-    .hamburger.-active .hamburger_line {
-        background-color: transparent;
-    }
-
-    .hamburger.-active .hamburger_line::before {
-        top: 0;
-        transform: rotate(45deg);
-    }
-
-    .hamburger.-active .hamburger_line::after {
-        top: 0;
-        transform: rotate(-45deg);
-    }
-
-    .hamburger.-active .hamburger_text::before {
-        content: '閉じる';
-    }
-
-    .hamburger_line {
-        display: block;
-        height: 2px;
-        position: absolute;
-        top: 23px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 24px;
-        background-color: #172e59;
-        transition: 0.4s;
-    }
-
-    .hamburger_line:before,
-    .hamburger_line:after {
-        content: "";
-        display: block;
-        height: 100%;
-        position: absolute;
-        width: 100%;
-        background-color: #172e59;
-        transition: inherit;
-    }
-
-    .hamburger_line:before {
-        top: -6px;
-    }
-
-    .hamburger_line:after {
-        top: 6px;
-    }
-
-    .hamburger_text {
-        position: absolute;
-        bottom: 8px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100%;
-    }
-
-    .hamburger_text::before {
-        content: "メニュー";
-        text-align: center;
-        color: #172e59;
-        font-size: 10px;
-        font-weight: 900;
-    }
-
-    .header {
-        width: 300px;
-    }
-
-    .header_nav-area {
-        position: fixed;
-        top: 0;
-        left: -100%;
-        z-index: 9;
-        height: 100vh;
-        width: 300px;
-        visibility: hidden;
-        padding-top: 60px;
-        background-color: #fff;
-        transition: 0.4s;
-    }
-
-    .header_nav-area.-active {
-        left: 0;
-        visibility: visible;
-    }
-
     .global-navigation {
-        padding-top: 40px;
-        padding-right: 25px;
-        padding-bottom: 120px;
-        padding-left: 25px;
-    }
-
-    .global-navigation_list>li {
-        padding-bottom: 20px;
-        border-bottom: 2px solid #e7e9ee;
-    }
-
-    .global-navigation_list>li+li {
-        margin-top: 20px;
-    }
-
-    .global-navigation_link {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        color: #172e59;
-        font-weight: 900;
-        transition: color 0.4s;
-        font-size: 0.875rem;
-    }
-
-    .global-navigation_link.-accordion {
-        position: relative;
-        background: none;
-        border: none;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
+        list-style: none;
+        position: absolute;
         width: 100%;
-        padding: 0;
+        height: auto;
+        top: 0;
+        margin-top: 52px;
+        padding: 0 0 10px 0;
+        clear: both;
+        //background: var(--background-navbar);
+        transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+        transform: scale(1, 0);
+        transform-origin: top;
     }
+        /* Hamburger menu button */
+        .menu-btn:checked~.menu {
+            transform: scale(1, 1);
+            transform-origin: top;
+            transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+        }
+    
+        /* Hamburger menbu text */
+        .menu a {
+            text-decoration: none;
+            font-weight: 500;
+            letter-spacing: 2px;
+            font-size: 16px;
+            text-transform: capitalize;
+            color: #ddd;
+            opacity: 0;
+            transition: 0.5s;
+        }
+    
+        .menu li {
+            border-top: 1px solid rgb(75, 75, 75);
+            padding: 15px 0;
+            margin: 0 54px;
+            opacity: 0;
+            transition: 0.5s;
+        }
+    
+        .menu-btn:checked~.menu a,
+        .menu-btn:checked~.menu li {
+            opacity: 1;
+            transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.2s;
+        }
+    
+        .menu-btn {
+            display: none;
+        }
+    
+        .menu-icon {
+            display: inline-block;
+            position: relative;
+            cursor: pointer;
+            padding: 24px 14px;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+    
+        .navicon {
+            background: #ddd;
+            display: block;
+            height: 3px;
+            width: 26px;
+            position: relative;
+            transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+        }
+    
+        .navicon:before,
+        .navicon:after {
+            content: "";
+            display: block;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            background: #ddd;
+            transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+        }
+    
+        .navicon:before {
+            top: 9px;
+        }
+    
+        .navicon:after {
+            bottom: 9px;
+        }
+    
+        /* Hamburger Menu Animation Start */
+        .menu-btn:checked~.menu-icon .navicon:before {
+            transform: rotate(-45deg);
+        }
+    
+        .menu-btn:checked~.menu-icon .navicon:after {
+            transform: rotate(45deg);
+        }
+    
+        .menu-btn:checked~.menu-icon:not(.steps) .navicon:before {
+            top: 0;
+        }
+    
+        .menu-btn:checked~.menu-icon:not(.steps) .navicon:after {
+            bottom: 0;
+        }
+    
+        .menu-btn:checked~.menu-icon .navicon {
+            background: rgba(0, 0, 0, 0);
+            transition: 0.2192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+        }
+    
+        /* Hamburger Menu Animation End */
+    
+        /* Navbar Container */
+        .navtext-container {
+            width: 100%;
+            height: 52px;
+            position: absolute;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        /* Navbar Text */
+        .navtext {
+            position: absolute;
+            text-transform: uppercase;
+            color: #ddd;
+            letter-spacing: 4px;
+            font-size: 20px;
+        }
 
-    .global-navigation_link.-accordion::after {
-        content: '';
-        display: block;
-        height: 12px;
-        position: absolute;
-        top: 50%;
-        right: 5px;
-        width: 2px;
-        background-color: #ed3242;
-        transform: translateY(-50%);
-        transition: transform 0.4s;
-    }
-
-    .global-navigation_link.-accordion::before {
-        content: '';
-        display: block;
-        height: 2px;
-        position: absolute;
-        top: 50%;
-        right: 0;
-        width: 12px;
-        background-color: #ed3242;
-        transform: translateY(-50%);
-
-    }
-
-    .global-navigation_link.-active::after {
-        transform: translateY(-50%) rotate(-90deg);
-    }
-
+        
     /* home- main-image */
     .site-title {
         position: absolute;

@@ -23,8 +23,8 @@
 
     <!-- CSS設定 -->
     <link rel="stylesheet" href="css/style.css">
-    <!-- javascript設定 -->
-    <script src="js/script.js"></script>
+    <!-- javascript設定 
+    <script src="js/script.js"></script> -->
 </head>
 <body id="home">
     <header>
@@ -46,49 +46,40 @@
         </hgroup>
 
         <div class="menu-area">
+            <!-- ハンバーガーメニュー設定 -->
+            <input id="hamburger-btn" type="checkbox" class="hamburger-btn" aria-controls="navigation" aria-expanded="false"
+            aria-label="メニューを開く">
+            
+            <label for="hamburger-btn" class="menu-icon">
+                <span class="navicon"></span>
+            </label>
 
-            <button id="js-hamburger" type="button" class="hamburger" aria-controls="navigation" aria-expanded="false"
-                aria-label="メニューを開く">
-
-                <span class="hamburger_line"></span>
-                <span class="hamburger_text"></span>
-
-            </button>
-
-            <div class="header_nav-area js-nav-area" id="navigation">
-
-                <nav id="js-global-navigation" class="global-navigation">
-
-                    <ul class="global-navigation_list">
-                        <li>
-                            <a href="index.html" class="global-navigation_link">
-                                HOME
-                            </a>
-                        </li>
-                        <li>
-                            <a href="works.php.html" class="global-navigation_link">
-                                WORKS
-                            </a>
-                        </li>
-                        <li>
-                            <a href="about.php.html" class="global-navigation_link">
-                                ABOUT
-                            </a>
-                        </li>
-                        <li>
-                            <a href="contact.php.html" class="global-navigation_link">
-                                CONTACT
-                            </a>
-                        </li>
+            <nav class="global-navigation">
         
-                    </ul>
-                    <!-- 
-                    要素にフォーカスが当たった際に、メニューボタンか先頭項目にフォーカスを当てるようにJSで制御(フォーカストラップ) 
-                    -->
-                    <div id="js-focus-trap" tabindex="0"></div>
-
-                </nav>
-            </div>
+                <ul class="global-navigation_list">
+                    <li class="home">
+                        <a href="index.html" class="global-navigation_link">
+                            HOME
+                        </a>
+                    </li>
+                    <li>
+                        <a href="works.php.html" class="global-navigation_link">
+                            WORKS
+                        </a>
+                    </li>
+                    <li>
+                        <a href="about.php.html" class="global-navigation_link">
+                            ABOUT
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contact.php.html" class="global-navigation_link">
+                            CONTACT
+                        </a>
+                    </li>
+        
+                </ul>
+            </nav>
         </div>
     </header>
 
