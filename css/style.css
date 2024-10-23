@@ -145,16 +145,29 @@ header {
         }
     }
 
-    .global-navigation {
-        ul {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 3rem;
-            margin-top: 2.5rem;
-            font-size: 1.2rem;
+    .menu-area {
+
+        .hamburger-toggle, .menu-icon  {
+            display: none;
         }
+
+        .global-nav {
+            ul {
+                display: flex;
+                //justify-content: center;
+                align-items: flex-end;
+                flex-wrap: wrap;
+                gap: 3rem;
+                margin-top: 2.5rem;
+                font-size: 1.2rem;
+
+                li {
+                    
+                }
+            }
+        }    
     }
+
 }
 
 
@@ -261,7 +274,7 @@ footer {
 home.php
 ------------------------------------------------------------------*/
 /* トップイメージ */
-#main-image {
+#home #visual-area {
     display: flex;
     justify-content: center;
     height: 500px;
@@ -841,29 +854,36 @@ Responsive Web Design
     }
 
     /* ページトップのリンクボタン 
--- 外枠設定 */ .pagetop {
-    right: 5px;
-    bottom: 15px;
-    width: 30px;
-    height: 30px;
-        /* -- 背景色指定 */
-        .pagetop-bgcolor {
-            width: 20px;
-            height: 20px;
-    
-            /* -- 矢印整形処理 */
-            .pagetop-arrow {
-                height: 8px;
-                width: 8px;
-                margin: 6px auto 0;
+-- 外枠設定 */ 
+    .pagetop {
+        right: 5px;
+        bottom: 15px;
+        width: 30px;
+        height: 30px;
+            /* -- 背景色指定 */
+            .pagetop-bgcolor {
+                width: 20px;
+                height: 20px;
+        
+                /* -- 矢印整形処理 */
+                .pagetop-arrow {
+                    height: 8px;
+                    width: 8px;
+                    margin: 6px auto 0;
+                }
             }
-        }
     }
+
     /* ハンバーガーメニュー設定 */
     .menu-area {
+        position: fixed;
+        /* position fixed の表示崩れを防ぐ設定 */
+        top: 0;
+        left: 0;
+        z-index: 100;
         width: 100%;
         height: 52px;
-        position: relative;
+        background-color: #333;
     }
 
     .global-nav_list {
@@ -880,7 +900,7 @@ Responsive Web Design
         transform-origin: top;
     }
         /* Hamburger menu button */
-        .hamburger-toggle:checked ~ .global-nav_list {
+        .hamburger-toggle:checked ~ .global-nav>.global-nav_list {
             transform: scale(1, 1);
             transform-origin: top;
             transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
@@ -905,8 +925,8 @@ Responsive Web Design
             transition: 0.5s;
         }
     
-        .hamburger-toggle:checked ~ .global-nav_list a,
-        .hamburger-toggle:checked ~ .global-nav_list li {
+        .hamburger-toggle:checked ~ .global-nav>.global-nav_list a,
+        .hamburger-toggle:checked ~ .global-nav>.global-nav_list li {
             opacity: 1;
             transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.2s;
         }
@@ -924,6 +944,9 @@ Responsive Web Design
         }
     
         .navicon {
+            color: #fff;
+            font-size: small;
+            line-height: 1;
             background: #ddd;
             display: block;
             height: 3px;
@@ -992,8 +1015,9 @@ Responsive Web Design
         text-shadow: none;
     }
 
-    #main-image {
+    #home #visual-area {
         height: 300px;
+        margin-top: 52px; /* position fixed の表示崩れを防ぐ設定 */
 
         .catchphrase {
             display: none;
