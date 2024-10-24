@@ -42,17 +42,48 @@
                 <span class="decoration" aria-hidden="true" translate="no" inert>*/</span>
             </p>
         </hgroup>
-        <nav id="main-nav">
-            <ul>
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="works.php.html">WORKS</a></li>
-                <li><a href="about.php.html">ABOUT</a></li>
-                <li><a href="contact.php.html">CONTACT</a></li>
-            </ul>
-        </nav>
+
+        <div class="menu-area">
+            <!-- ハンバーガーメニュー設定 -->
+            <input id="hamburger-btn" type="checkbox" class="hamburger-toggle" aria-controls="navigation" aria-expanded="false"
+            aria-label="メニューを開く">
+            
+            <label for="hamburger-btn" class="menu-icon">
+                <span class="navicon"></span>menu
+            </label>
+            <nav class="global-nav">
+                <ul class="global-nav_list">
+                    <li class="home">
+                        <a href="index.html" class="global-nav_link">
+                            HOME
+                        </a>
+                    </li>
+                    <li>
+                        <a href="works.php.html" class="global-nav_link">
+                            WORKS
+                        </a>
+                    </li>
+                    <li>
+                        <a href="about.php.html" class="global-nav_link">
+                            ABOUT
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contact.php.html" class="global-nav_link">
+                            CONTACT
+                        </a>
+                    </li>
+        
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <h2 id="sub-image" class="bg-gradient-image">Web</h2>
+    <div id="visual-area" class="bg-gradient-image">
+
+        <h2 class="page-title">Web</h2>
+
+    </div>
     
     <div class="container">
         <main class="post-contents">
