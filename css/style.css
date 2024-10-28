@@ -63,21 +63,6 @@ body {
     position: absolute;
 }
 
-/* home 以外でコンテンツ部分の2カラム設定 */
-.container {
-    display: flex;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto 2rem;
-    padding: 3rem 10px;
-}
-.container main {
-    flex-basis: 80%;
-}
-.container aside {
-    flex-basis: 20%;
-}
-
 /* hover時拡大処理 */
 .hover-big {
     transition-duration: 1s;
@@ -159,22 +144,23 @@ header {
 
 #visual-area {
     height: 300px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
 
     .catchphrase {
         display: none;
     }
 
     .page-title {
-        padding-top: 65px;
         font-size: 4rem;
         font-family: "Noto Serif", serif;
         color: #fff;
         text-shadow: 2px 2px 4px rgba(0,0,0,0.5); 
-        position: absolute;
-        top: 50%;
     }
 
+    .catchphrase, .page-title {
+        align-self: center;
+    }
 }
 
 
@@ -543,14 +529,32 @@ home.php
 /* 
 page.php
 ------------------------------------------------------------------*/
+/* home 以外でコンテンツ部分の2カラム設定 */
+.container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto 2rem;
+    padding: 3rem 10px;
+
+    main {
+        max-width: 960px;
+    }
+
+    aside {
+        min-width: 240px;
+    }
+}
+
 /* works.php --------------------------- */
 .works-list {
     display: grid;
-    grid-template-columns: repeat(3, 280px);
-    gap: 3rem 2rem;
-    justify-content: space-between;
+    grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+    gap: 36px;
 }
 .works-item {
+    /* ボックスの高さを高いほうに合わせる */
     display: flex;
 }
 .works-item a {
@@ -707,7 +711,7 @@ sidebar.php
 ------------------------------------------------------------------*/
 /* サイドナビゲーション */
 .category-menu {
-    margin-left: 20px;
+    width: 100%;
     font-family: "Noto Serif", serif;
 
     h3 {
