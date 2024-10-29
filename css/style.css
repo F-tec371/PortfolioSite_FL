@@ -122,7 +122,6 @@ header {
         .menu-area {
             display: flex;
             align-items: flex-end;
-            justify-content: center;
             margin-top: 2rem;
 
             .hamburger-toggle, .menu-icon  {
@@ -130,6 +129,7 @@ header {
             }
 
             .global-nav {
+
                 .global-nav_list {
                     display: flex;
                     justify-content: center;
@@ -176,6 +176,7 @@ footer {
     background-color: #a799f7;
     color: #fff;
     height: 65px;
+    margin-top: 5rem;
 }
 /* footer wave -- start -- */
 .footer_wave {
@@ -287,12 +288,10 @@ home.php
         font-weight: bold;
     } 
 
+    .page-title {
+        display: none;
+    }
 }
-
-#home h2 {
-    display: none;
-}
-
 
 /* home コンテンツ部分 */
 #home {
@@ -336,7 +335,7 @@ home.php
     background: linear-gradient(90deg, #ebedee,#e0c3fc,#8ec5fc,#ebedee, transparent);
 }
 
-/* home-about */
+/* home - about */
 #about-contents {
     display: flex;
     justify-content: center;
@@ -409,13 +408,12 @@ home.php
     100% { transform: scale(50) rotate(45deg); opacity: 0; }
 }
 
-/* home-works */
+/* home - works */
 #works-cat {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     gap: 2rem;
-    margin: 0 auto;
 
     a {
         flex: 1 1 25%;
@@ -529,33 +527,38 @@ home.php
 /* 
 page.php
 ------------------------------------------------------------------*/
-/* home 以外でコンテンツ部分の2カラム設定 */
+/* home 以外のページのメインコンテンツの2カラム設定 */
 .container {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
     max-width: 1200px;
-    margin: 0 auto 2rem;
-    padding: 3rem 10px;
+    margin: 0 auto 4rem;
+    padding: 0 0.4%;
 
     main {
-        max-width: 960px;
+        max-width: 70%;
     }
 
     aside {
-        min-width: 240px;
+        min-width: 25%;
+    }
+
+    main, aside {
+        margin-top: 3rem;
     }
 }
 
 /* works.php --------------------------- */
 .works-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
-    gap: 36px;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1.5rem;
 }
 .works-item {
     /* ボックスの高さを高いほうに合わせる */
     display: flex;
+    max-width: 260px;
+    margin-bottom: 3rem;
 }
 .works-item a {
     display: block;
@@ -596,7 +599,7 @@ page.php
 .pagination {
     display: block;
     text-align: center;
-    margin: 5rem 0;
+    margin: 10px 0;
 }
 .nav-links {
     display: inline-block;
@@ -711,7 +714,7 @@ sidebar.php
 ------------------------------------------------------------------*/
 /* サイドナビゲーション */
 .category-menu {
-    width: 100%;
+    //width: 100%;
     font-family: "Noto Serif", serif;
 
     h3 {
@@ -841,56 +844,75 @@ single.php
 
 
 /* 
-Responsive Web Design
+Responsive Layout Setting
 ------------------------------------------------------------------*/
+/* ---------------------------------------------------------
+    959px以下 レスポンシブレイアウト設定（タブレット用） 
+----------------------------------------------------------*/
 
 @media screen and (max-width: 959px) {
-    /* 959px以下に適用されるCSS（タブレット用） */
-    header {
-        display: block;
-        padding-top: 1.2rem;
 
-        .site-title {
-            width: 100%;
+        
+} /* @media max-width:959px end */
+
+
+/* ---------------------------------------------------------
+    480px以下 レスポンシブレイアウト設定（スマホ用） 
+----------------------------------------------------------*/
+@media screen and (max-width: 480px) {
+    header {
+        padding-top: 0;
+
+        .header-area {
+            height: 52px;
+
+            .site-title {
+                position: absolute;
+                top: 140%;
+        
+                h1,
+                p {
+                    color: #fff;
+                    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+                    .decoration {
+                        color: #888 !important;
+                        text-shadow: none;
+                    }                
+                }
+            }
+        }
+    }
+    
+    #visual-area {
+        height: 250px;
+        
+        .page-title {
+        font-size: 1.3rem;
+        text-shadow: none;
+        position: fixed;
+        top: 1.2%;
+        z-index: 110; 
+        }
+    } 
+    /* home - visual-area専用指定 */
+    #home #visual-area {
+        height: 250px;
+
+        .catchphrase {
+            display: none;
+        }
+
+        .page-title {
+            display: block;
+            font-size: 1.3rem;
+            text-shadow: none;
+            position: fixed;
+            top: 1.2%;
+            z-index: 110;    
         }
     }
 
-    #home .catchphrase {
-        max-width: 700px;
-    }
-    #home main  {
-        max-width: 800px;
-    }
-        
-}
-
-
-@media screen and (max-width: 480px) {
-    /* 480px以下に適用されるCSS（スマホ用） */
-    header {
-        padding-top: 0;
-    }
-
-    /* ページトップのリンクボタン 
--- 外枠設定 */ 
-    .pagetop {
-        right: 5px;
-        bottom: 15px;
-        width: 30px;
-        height: 30px;
-            /* -- 背景色指定 */
-            .pagetop-bgcolor {
-                width: 20px;
-                height: 20px;
-        
-                /* -- 矢印整形処理 */
-                .pagetop-arrow {
-                    height: 8px;
-                    width: 8px;
-                    margin: 6px auto 0;
-                }
-            }
-    }
 
     /* ハンバーガーメニュー設定 */
     .menu-area {
@@ -1027,50 +1049,27 @@ Responsive Web Design
         /* Hamburger Menu Animation End */
     
         
-    /* home- main-image */
-    header {
-        height: 52px;
-
-        .site-title {
-            position: absolute;
-            top: 140%;
-    
-            h1,
-            p {
-                color: #fff;
-                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        /* ページトップのリンクボタン 
+    -- 外枠設定 */ 
+    .pagetop {
+        right: 5px;
+        bottom: 15px;
+        width: 30px;
+        height: 30px;
+            /* -- 背景色指定 */
+            .pagetop-bgcolor {
+                width: 20px;
+                height: 20px;
+        
+                /* -- 矢印整形処理 */
+                .pagetop-arrow {
+                    height: 8px;
+                    width: 8px;
+                    margin: 6px auto 0;
+                }
             }
-        }
-    
     }
 
-    .decoration {
-        color: #888 !important;
-        text-shadow: none;
-    }
-
-    #home #visual-area {
-        height: 250px;
-
-        .catchphrase {
-            display: none;
-        }
-
-        h2 {
-            display: block;
-            font-size: 1.5rem;
-            text-shadow: none;
-            position: absolute;
-            top: -7%;
-            z-index: 110;    
-        }
-    }
-    /* #visual-area h2 {
-            display: block;
-            align-self: flex-end;
-            margin-bottom: 1.5rem;
-            font-size: 2.5rem;    
-    } */
 
     /* home- about-part */
     #about-contents {
@@ -1098,15 +1097,4 @@ Responsive Web Design
         }
     }
 
-    /* 各ページ　h2タイトル　設定 */
-    #sub-image {
-        height: 250px;
-        text-align: center;
-        padding-top: 65px;
-        font-size: 4rem;
-        font-family: "Noto Serif", serif;
-        color: #fff;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    }
-
-}
+} /* @media max-width:480px end */
