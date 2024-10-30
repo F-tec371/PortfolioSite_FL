@@ -629,7 +629,7 @@ page.php
 
 /* contact.php --------------------------- */
 .Form {
-    max-width: 600px;
+    width: 600px;
     margin: 0 auto;
 }
 
@@ -714,7 +714,6 @@ sidebar.php
 ------------------------------------------------------------------*/
 /* サイドナビゲーション */
 .category-menu {
-    //width: 100%;
     font-family: "Noto Serif", serif;
 
     h3 {
@@ -750,13 +749,11 @@ sidebar.php
                     width: 100%;
                     color: #333;
                     padding: 10px 0 10px 30px;
-                    background:
-                        radial-gradient(circle 7px, currentColor 90%, transparent) 
-                        bottom var(--d, -14px) left 50%/12px 14px repeat-x;
                     transition: 0.5s;
                 
                     &:hover {
-                        --d: -7px;
+                        background-color: #ccc;
+                        opacity: 0.8;
                     }            
             }
 
