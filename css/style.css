@@ -536,11 +536,11 @@ page.php
     padding: 0 0.4%;
 
     main {
-        max-width: 70%;
+        width: 70%;
     }
 
     aside {
-        min-width: 25%;
+        width: 25%;
     }
 
     main, aside {
@@ -557,8 +557,8 @@ page.php
 .works-item {
     /* ボックスの高さを高いほうに合わせる */
     display: flex;
-    max-width: 260px;
     margin-bottom: 3rem;
+    width: 31%;
 }
 .works-item a {
     display: block;
@@ -568,7 +568,6 @@ page.php
     rgba(0, 0, 0, .1);
     border: #ebedee 1px solid;
     border-radius: 5px;
-
 }
 .works-image {
     width: 100%;
@@ -597,6 +596,7 @@ page.php
 
 /* ページネーション */
 .pagination {
+    width: 100%;
     display: block;
     text-align: center;
     margin: 10px 0;
@@ -844,19 +844,66 @@ single.php
 Responsive Layout Setting
 ------------------------------------------------------------------*/
 /* ---------------------------------------------------------
-    959px以下 レスポンシブレイアウト設定（タブレット用） 
+    986px以下 レスポンシブレイアウト設定（タブレット用） 
 ----------------------------------------------------------*/
 
-@media screen and (max-width: 959px) {
+@media screen and (max-width: 986px) {
+    /* header 修正 */
+    .header-area {
+        justify-content: center !important;
+    }
+    /* home 以外のページのメインコンテンツの2カラム設定 */
+    .container {
+        display: block;
+
+        main, aside {
+            margin-top: 3rem;
+            width: 100%;
+        }
+    }
+    .category-menu ul {
+        text-align: center !important;
+
+        li {
+            background-position: 43% center !important;
+
+        }
+    }
+    /* works.php --------------------------- */
+    .works-list {
+        display: flex;
+        flex-flow: row wrap;
+        gap: 1.5rem;
+    }
+    .works-item {
+        min-width: 220px !important; 
+    }
 
         
-} /* @media max-width:959px end */
+} /* @media max-width:986px end */
+
+
+/* ---------------------------------------------------------
+    481px - 684px間 レスポンシブレイアウト設定（表示調整） 
+----------------------------------------------------------*/
+@media screen and (min-width:481px) and (max-width: 713px) {
+    .works-item {
+        width: 45% !important; 
+
+        a {
+            width: 100%;
+        }
+    }
+
+
+} /* @media 481px - 774px end */
 
 
 /* ---------------------------------------------------------
     480px以下 レスポンシブレイアウト設定（スマホ用） 
 ----------------------------------------------------------*/
 @media screen and (max-width: 480px) {
+    /* header 修正 */
     header {
         padding-top: 0;
 
@@ -1046,7 +1093,15 @@ Responsive Layout Setting
         /* Hamburger Menu Animation End */
     
         
-        /* ページトップのリンクボタン 
+    /* works.php --------------------------- */
+    .works-list {
+        display: block !important;
+
+        li, li a {
+            width: 100% !important;
+        }
+    }
+    /* ページトップのリンクボタン 
     -- 外枠設定 */ 
     .pagetop {
         right: 5px;
