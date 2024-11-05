@@ -140,10 +140,33 @@ header {
                     flex-wrap: wrap;
                     gap: 3rem;
                     font-size: 1.2rem;
-                }
+
+                    li a:hover {
+                            background: linear-gradient(45deg, #f764d2, #5badff);
+                            color: transparent;
+                            /* テキストの色を透明に指定 */
+                            -webkit-background-clip: text;
+                            /* Chrome Edge Safari用 */
+                            background-clip: text;
+                            /* Firefoxはプレフィックス不要 */
+                            transition: .3s;
+                        }                
+                    }
             } 
         }
     }
+}
+/* グローバルメニュー　ホバーエフェクト　
+バイブレーションテキスト */
+.vibration-hover:hover {
+    display: inline-block;
+    animation: vibration-hover .1s .5s  infinite;
+} @keyframes  vibration-hover {
+    0% {transform: translate(0px, 0px) rotateZ(0deg)}
+    25% {transform: translate(2px, 2px) rotateZ(1deg)}
+    50% {transform: translate(0px, 2px) rotateZ(0deg)}
+    75% {transform: translate(2px, 0px) rotateZ(-1deg)}
+    100% {transform: translate(0px, 0px) rotateZ(0deg)}
 }
 
 #visual-area {
@@ -283,12 +306,12 @@ home.php
 
     .catchphrase {
         display: block;
-        width: 800px;
+        max-width: 1000px;
         min-height: 0;   /* Safari10.1～12.0 clamp表示崩れ対策 */
         align-self: center;
         text-align: center;
         color: #fff;
-        font-size: clamp(1rem, 0.091rem + 3.88vw, 3rem) ;
+        font-size: clamp(1rem, -0.882rem + 9.41vw, 5rem);
         font-weight: bold;
     } 
 
@@ -617,13 +640,15 @@ page.php
     border-radius: 4px;
 }
 .page-numbers.current {
-    background-color: #333;
+    background-color: #a799f7;
     color: #fff;
-    border-color: #333;
+    border-color: #a799f7;
 }
 .page-numbers:hover:not(.current) {
-    background-color: #888;
-    color: #f0efe7;
+    background-color: #8DA2FC;
+    color: #fff;
+    border-color: #8DA2FC;;
+    transition: .5s;
 }
 .prev.page-numbers,
 .next.page-numbers {
@@ -818,8 +843,6 @@ single.php
             }
 
             .post-info {
-                /* float解除の指定 */
-                //overflow: hidden; 
 
                 dt {
                     float: left;
@@ -841,8 +864,38 @@ single.php
     justify-content: space-around;
     margin: 20px auto;
     max-width: 1200px;
-}
 
+    a {
+        display: inline-block;
+        padding: 5px 10px;
+    }
+    a[rel="prev"] {
+        border: 1px solid #f764d2;
+        color: #f764d2; 
+    }
+
+    a[rel="next"] {
+        border: 1px solid #5badff;
+        color: #5badff;
+    }
+
+}
+/* 上の記述に含めると、animationが効かないので、下に個別に書き出す。 */
+.post-navigation a[rel="prev"]:hover,
+.post-navigation a[rel="prev"]:focus {
+    animation: prev-hover 1s;
+    box-shadow: 0 0 0 2em transparent;
+    } @keyframes prev-hover {
+        0% { box-shadow: 0 0 0 0 #f764d2; }
+    } 
+.post-navigation a[rel="next"]:hover,
+.post-navigation a[rel="next"]:focus {
+    animation: next-hover 1s;
+    box-shadow: 0 0 0 2em transparent;
+    } @keyframes next-hover {
+        0% { box-shadow: 0 0 0 0 #5badff; }
+    } 
+    
 
 /* 
 404.php
